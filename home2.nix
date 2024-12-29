@@ -12,12 +12,20 @@ in {
     stateVersion = "24.05"; # Please read the comment before changing.
   };
 
+  services = {
+    gpg-agent = {
+      enableSshSupport = true;
+      enable = true;
+    };
+  };
+
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
     # Enable our shell
     zsh.enable = true;
     direnv.enable = true;
+    gpg.enable = true;
 
     termusic.enable = false; # not building
     ffmpeg-full.enable = false;

@@ -40,7 +40,7 @@ in {
     # Additional Websites that *should* be inside the website flake but are not
     # Likely because they are under active development
     nginx = {
-      virtualHosts."irlqt.me" = {
+      virtualHosts."archives.irlqt.me" = {
         forceSSL = true;
         enableACME = true;
         acmeRoot = null;

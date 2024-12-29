@@ -9,6 +9,7 @@
   imports = [
     # monero
     ./monero.nix
+    ./misskey.nix
     # Additional System Configuration: boot, hardware, filesystems
     ./nixos
     # Media Fetching, Cataloging, and Playback Services

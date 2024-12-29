@@ -28,7 +28,7 @@
 
     radarr = {
       enable = true;
-      user = "archivist";
+      user = "crow";
       group = "pirates";
       openFirewall = true;
       dataDir = "/zpools/ssd/apps/radarr";
@@ -36,7 +36,7 @@
 
     sonarr = {
       enable = true;
-      user = "archivist";
+      user = "crow";
       group = "pirates";
       openFirewall = true;
       dataDir = "/zpools/ssd/apps/sonarr";
@@ -52,7 +52,7 @@
 
     nzbget = {
       enable = true;
-      user = "archivist";
+      user = "crow";
       group = "pirates";
       settings = {
         "MainDir" = "/zpools/ssd/apps/nzbget";

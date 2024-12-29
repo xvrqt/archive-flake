@@ -55,14 +55,6 @@
                 ./home.nix
               ];
             };
-            users.archivist = {...}: {
-              imports = [
-                # Shell Customization & Useful Command Programs
-                cli.homeManagerModules.${system}.default
-                # Main Home Manager Module - pulls in sub-modules from ./home
-                ./home2.nix
-              ];
-            };
           };
         }
       ];

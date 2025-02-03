@@ -1,0 +1,34 @@
+2025-01-03 00:56:49.526	    7fce4f697ec0	INFO	logging	contrib/epee/src/mlog.cpp:274	New log categories: *:WARNING,net:FATAL,net.http:FATAL,net.ssl:FATAL,net.p2p:FATAL,net.cn:FATAL,daemon.rpc:FATAL,global:INFO,verify:FATAL,serialization:FATAL,daemon.rpc.payment:ERROR,stacktrace:INFO,logging:INFO,msgwriter:INFO
+2025-01-03 00:56:49.526	    7fce4f697ec0	INFO	logging	contrib/epee/src/mlog.cpp:274	New log categories: *:WARNING,net:FATAL,net.http:FATAL,net.ssl:FATAL,net.p2p:FATAL,net.cn:FATAL,daemon.rpc:FATAL,global:INFO,verify:FATAL,serialization:FATAL,daemon.rpc.payment:ERROR,stacktrace:INFO,logging:INFO,msgwriter:INFO,bcutil:INFO
+2025-01-03 00:56:49.526	    7fce4f697ec0	WARNING	bcutil	src/blockchain_utilities/blockchain_stats.cpp:189	Starting...
+2025-01-03 00:56:49.526	    7fce4f697ec0	WARNING	bcutil	src/blockchain_utilities/blockchain_stats.cpp:205	Initializing source blockchain (BlockchainDB)
+2025-01-03 00:56:49.527	    7fce4f697ec0	WARNING	bcutil	src/blockchain_utilities/blockchain_stats.cpp:217	Loading blockchain from folder /home/crow/.bitmonero/lmdb ...
+2025-01-03 00:56:49.527	    7fce4f697ec0	WARNING	blockchain.db.lmdb	src/blockchain_db/lmdb/db_lmdb.cpp:75	Failed to open lmdb environment: No such file or directory
+2025-01-03 00:56:49.527	    7fce4f697ec0	INFO	stacktrace	src/common/stack_trace.cpp:133	Exception: cryptonote::DB_ERROR
+2025-01-03 00:56:49.527	    7fce4f697ec0	INFO	stacktrace	src/common/stack_trace.cpp:134	Unwound call stack:
+2025-01-03 00:56:49.527	    7fce4f697ec0	INFO	stacktrace	src/common/stack_trace.cpp:172	    [1]  0xae) [0x55bfbc4bdfea]:__cxa_throw+0xae) [0x55bfbc4bdfea]
+2025-01-03 00:56:49.527	    7fce4f697ec0	INFO	stacktrace	src/common/stack_trace.cpp:172	    [2] monero-blockchain-stats(+0x518be) [0x55bfbc47b8be] 
+2025-01-03 00:56:49.527	    7fce4f697ec0	INFO	stacktrace	src/common/stack_trace.cpp:172	    [3] monero-blockchain-stats(+0x1df30c) [0x55bfbc60930c] 
+2025-01-03 00:56:49.527	    7fce4f697ec0	INFO	stacktrace	src/common/stack_trace.cpp:172	    [4] monero-blockchain-stats(+0xa452e) [0x55bfbc4ce52e] 
+2025-01-03 00:56:49.527	    7fce4f697ec0	INFO	stacktrace	src/common/stack_trace.cpp:172	    [5] /nix/store/65h17wjrrlsj2rj540igylrx7fqcd6vq-glibc-2.40-36/lib/libc.so.6(+0x2a1fc) [0x7fce4f02a1fc] 
+2025-01-03 00:56:49.527	    7fce4f697ec0	INFO	stacktrace	src/common/stack_trace.cpp:172	    [6]  0x89) [0x7fce4f02a2b9]:__libc_start_main+0x89) [0x7fce4f02a2b9]
+2025-01-03 00:56:49.527	    7fce4f697ec0	INFO	stacktrace	src/common/stack_trace.cpp:172	    [7] monero-blockchain-stats(+0xabaf5) [0x55bfbc4d5af5] 
+2025-01-03 00:56:49.527	    7fce4f697ec0	INFO	stacktrace	src/common/stack_trace.cpp:172	
+2025-01-03 00:56:49.527	    7fce4f697ec0	WARNING	bcutil	src/blockchain_utilities/blockchain_stats.cpp:225	Error opening database: Failed to open lmdb environment: No such file or directory
+2025-01-03 00:56:55.771	    7f277f67bec0	INFO	logging	contrib/epee/src/mlog.cpp:274	New log categories: *:WARNING,net:FATAL,net.http:FATAL,net.ssl:FATAL,net.p2p:FATAL,net.cn:FATAL,daemon.rpc:FATAL,global:INFO,verify:FATAL,serialization:FATAL,daemon.rpc.payment:ERROR,stacktrace:INFO,logging:INFO,msgwriter:INFO
+2025-01-03 00:56:55.771	    7f277f67bec0	INFO	logging	contrib/epee/src/mlog.cpp:274	New log categories: *:WARNING,net:FATAL,net.http:FATAL,net.ssl:FATAL,net.p2p:FATAL,net.cn:FATAL,daemon.rpc:FATAL,global:INFO,verify:FATAL,serialization:FATAL,daemon.rpc.payment:ERROR,stacktrace:INFO,logging:INFO,msgwriter:INFO,bcutil:INFO
+2025-01-03 00:56:55.771	    7f277f67bec0	WARNING	bcutil	src/blockchain_utilities/blockchain_stats.cpp:189	Starting...
+2025-01-03 00:56:55.771	    7f277f67bec0	WARNING	bcutil	src/blockchain_utilities/blockchain_stats.cpp:205	Initializing source blockchain (BlockchainDB)
+2025-01-03 00:56:55.772	    7f277f67bec0	WARNING	bcutil	src/blockchain_utilities/blockchain_stats.cpp:217	Loading blockchain from folder /root/.bitmonero/lmdb ...
+2025-01-03 00:56:55.772	    7f277f67bec0	WARNING	blockchain.db.lmdb	src/blockchain_db/lmdb/db_lmdb.cpp:75	Failed to open lmdb environment: No such file or directory
+2025-01-03 00:56:55.772	    7f277f67bec0	INFO	stacktrace	src/common/stack_trace.cpp:133	Exception: cryptonote::DB_ERROR
+2025-01-03 00:56:55.772	    7f277f67bec0	INFO	stacktrace	src/common/stack_trace.cpp:134	Unwound call stack:
+2025-01-03 00:56:55.773	    7f277f67bec0	INFO	stacktrace	src/common/stack_trace.cpp:172	    [1]  0xae) [0x55b9acc6efea]:__cxa_throw+0xae) [0x55b9acc6efea]
+2025-01-03 00:56:55.773	    7f277f67bec0	INFO	stacktrace	src/common/stack_trace.cpp:172	    [2] monero-blockchain-stats(+0x518be) [0x55b9acc2c8be] 
+2025-01-03 00:56:55.773	    7f277f67bec0	INFO	stacktrace	src/common/stack_trace.cpp:172	    [3] monero-blockchain-stats(+0x1df30c) [0x55b9acdba30c] 
+2025-01-03 00:56:55.773	    7f277f67bec0	INFO	stacktrace	src/common/stack_trace.cpp:172	    [4] monero-blockchain-stats(+0xa452e) [0x55b9acc7f52e] 
+2025-01-03 00:56:55.773	    7f277f67bec0	INFO	stacktrace	src/common/stack_trace.cpp:172	    [5] /nix/store/65h17wjrrlsj2rj540igylrx7fqcd6vq-glibc-2.40-36/lib/libc.so.6(+0x2a1fc) [0x7f277f02a1fc] 
+2025-01-03 00:56:55.773	    7f277f67bec0	INFO	stacktrace	src/common/stack_trace.cpp:172	    [6]  0x89) [0x7f277f02a2b9]:__libc_start_main+0x89) [0x7f277f02a2b9]
+2025-01-03 00:56:55.773	    7f277f67bec0	INFO	stacktrace	src/common/stack_trace.cpp:172	    [7] monero-blockchain-stats(+0xabaf5) [0x55b9acc86af5] 
+2025-01-03 00:56:55.773	    7f277f67bec0	INFO	stacktrace	src/common/stack_trace.cpp:172	
+2025-01-03 00:56:55.773	    7f277f67bec0	WARNING	bcutil	src/blockchain_utilities/blockchain_stats.cpp:225	Error opening database: Failed to open lmdb environment: No such file or directory

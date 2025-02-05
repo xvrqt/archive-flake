@@ -27,5 +27,7 @@ in
     ## DOWNLOADERS ##
     # Usenet NXB file downloader
     (import ./nzbget.nix { inherit domain dataPath; })
+    # Torrent Client & Web UI
+    (import ./qbittorrent { inherit domain dataPath; })
   ];
 }

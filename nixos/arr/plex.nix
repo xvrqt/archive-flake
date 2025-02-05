@@ -24,7 +24,8 @@ in
 
     nginx = {
       # Setup the reverse proxy
-      virtualHosts."${subDomain}.${domain}" = {
+      # Plex uses 'xvrqt.com' because it's an external facing service
+      virtualHosts."plex.xvrqt.com" = {
         http2 = true;
         forceSSL = true;
         acmeRoot = null;

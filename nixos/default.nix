@@ -21,9 +21,11 @@
     ./i2p.nix
     # Mesh Network
     #./reticulum.nix
-    ./conduwuit.nix
-    # Wireguard VPN configuration
-    ./wireguard.nix
+    ./conduwuit
+    # Run a DNS
+    ./dns.nix
+    # Search Engine
+    ./searx.nix
     # Gummi-boot setup, kernel modules, etc
     ./boot.nix
     # Setup and import zpools, boot device, unlock system device, persist data
@@ -169,8 +171,8 @@
     nameservers = [ "1.1.1.1" "8.8.8.8" ];
     firewall = {
       enable = true;
-      allowedUDPPorts = [ 5349 53 5350 ];
-      allowedTCPPorts = [ 23 22 80 53 8448 3478 3479 5055 443 3000 2049 18080 3333 5555 7777 9000 ];
+      allowedUDPPorts = [ 5349 53 5350 32400 ];
+      allowedTCPPorts = [ 23 22 80 53 8448 3478 3479 5055 443 3000 2049 18080 3333 5555 7777 9000 32400 ];
     };
   };
 

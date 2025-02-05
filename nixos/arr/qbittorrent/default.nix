@@ -1,15 +1,24 @@
-# Ensure that you've opened port 32400 on the router
-# or you won't be able to reach it externally
 { domain, dataPath, ... }:
 let
-  name = "radarr";
-  port = 7878;
+  name = "qbittorrent";
+  webPort = 8080;
+  torrentPort = 37490;
   user = "crow";
   address = "127.0.0.1";
-  subDomain = name;
+  subDomain = "torrents";
 in
 {
-
+  imports = [
+    # Creates a services options 'qbittorrent' so that we can
+    # configure it like all the rest of the services
+    ./option.nix
+  ];
+  # Open the torrent port in the firewall
+  networking.firewall = {
+    allowedTCPPorts = [ torrentPort ];
+    allowedUDPPorts = [ torrentPort ];
+  };
+  # Uses the newly created service entry in 'options.nix'
   services = {
     "${name}" = {
       enable = true;
@@ -20,7 +29,6 @@ in
       dataDir = "${dataPath}/${name}";
       openFirewall = true;
     };
-
     nginx = {
       # Setup the reverse proxy
       virtualHosts."${subDomain}.${domain}" = {
@@ -29,7 +37,7 @@ in
         acmeRoot = null;
         enableACME = true;
         locations."/" = {
-          proxyPass = "http://${address}:${(builtins.toString port)}";
+          proxyPass = "http://${address}:${(builtins.toString webPort)}";
           proxyWebsockets = true;
           # Only allow people connected via Wireguard to connect
           extraConfig = ''

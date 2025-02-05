@@ -2,7 +2,6 @@
 {
   inputs = {
     # Essentials
-    #nixpkgs.url = "github:NixOs/nixpkgs";
     nixpkgs.url = "github:NixOs/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -21,12 +20,14 @@
     websites.url = "github:xvrqt/website-flake";
     conduwuit.url = "github:girlbossceo/conduwuit";
     identities.url = "github:xvrqt/identities-flake";
+    wireguard.url = "github:xvrqt/wireguard-flake";
   };
 
   outputs =
     { nixpkgs
     , identities
     , conduwuit
+    , wireguard
     , home-manager
     , sops-nix
     , impermanence
@@ -35,22 +36,7 @@
     , ...
     } @ inputs:
     let
-      machine = {
-        name = "archive";
-        # TODO: Move into it's own flake for Wireguard
-        # TODO: Move into it's own flake for Secret Management
-        wireguard = {
-          ip = "2.2.2.1";
-          port = 16842;
-          interface = "irlqt-secured";
-          peers = {
-            spark = {
-              publicKey = "paUrZfB470WVojQBL10kpL7+xUWZy6ByeTQzZ/qzv2A=";
-              allowedIPs = [ "2.2.2.2/32" ];
-            };
-          };
-        };
-      };
+      machine = "archive";
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
@@ -62,10 +48,12 @@
       };
     in
     {
-      nixosConfigurations.${machine.name} = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.${machine} = nixpkgs.lib.nixosSystem {
         inherit pkgs;
         specialArgs = { inherit inputs machine; };
         modules = [
+          wireguard.nixosModules.default
+          wireguard.nixosModules.archive
           identities.nixosModules.users.crow
           # Needed for secret management
           sops-nix.nixosModules.sops

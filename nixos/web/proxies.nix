@@ -19,6 +19,12 @@ in
 {
   services = {
     nginx = {
+      virtualHosts."ollama.irlqt.net" = {
+        locations."/" = {
+          proxyPass = "http://2.2.2.4:6547";
+          proxyWebsockets = true;
+        };
+      };
       virtualHosts."xvrqt.com" = {
         locations."= /.well-known/matrix/server".extraConfig = mkWellKnown serverConfig;
         locations."= /.well-known/matrix/client".extraConfig = mkWellKnown clientConfig;
@@ -73,7 +79,7 @@ in
         };
       };
       # virtualHosts."immich.xvrqt.com" = {
-      virtualHosts."immich.irlqt.me" = {
+      virtualHosts."immich.irlqt.net" = {
         forceSSL = true;
         enableACME = true;
         acmeRoot = null;

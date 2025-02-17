@@ -22,6 +22,10 @@
     # Mesh Network
     #./reticulum.nix
     ./conduwuit
+    ./forgejo
+    # Run an instance of peer tube
+    #./peertube.nix
+    #./next-cloud.nix
     # Run a DNS
     ./dns.nix
     # Search Engine
@@ -81,28 +85,7 @@
   sops.secrets."cloudflare/CF_DNS_API_TOKEN" = { owner = "acme"; };
 
   services = {
-    # TODO: Move to the user config flake eventually
-    # So I don't have to login to my own shell
-    getty = {
-      autologinUser = "crow";
-    };
 
-    # Start and SSH server, and set up known keys
-    # Break this out, add secrets eventually
-    openssh = {
-      enable = true;
-      ports = [ 22 ];
-
-      settings = {
-        AllowUsers = [ "crow" ];
-        PasswordAuthentication = false;
-        PermitRootLogin = "no";
-        UseDns = true;
-      };
-      extraConfig = ''
-        AcceptEnv GIT_PROTOCOL
-      '';
-    };
     # Needed by something, but I'm not sure what (arr probably?)
     xserver.videoDrivers = [ "nvidia" ];
   };

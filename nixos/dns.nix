@@ -13,7 +13,9 @@ in
       ];
       customDNS = {
         mapping = {
+          "git.irlqt.net" = "${ip}";
           "llm.irlqt.net" = "2.2.2.4";
+          "cui.irlqt.net" = "2.2.2.4";
           "jellyseerr.irlqt.net" = "${ip}";
           "search.irlqt.net" = "${ip}";
           "torrents.irlqt.net" = "${ip}";

@@ -30,10 +30,10 @@
   # used during normal operation. It only exists if rebuilding the system 
   # requires more than 32 GiB of RAM.
   swapDevices = [
-    {
-      size = 16 * 1024; # 16 GiB
-      device = "/var/lib/swapfile";
-    }
+    # {
+    #   size = 16 * 1024; # 16 GiB
+    #   device = "/var/lib/swapfile";
+    # }
   ];
 
   #################

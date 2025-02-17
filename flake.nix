@@ -21,10 +21,12 @@
     conduwuit.url = "github:girlbossceo/conduwuit";
     identities.url = "github:xvrqt/identities-flake";
     wireguard.url = "github:xvrqt/wireguard-flake";
+    secrets.url = "github:xvrqt/secrets-flake";
   };
 
   outputs =
     { nixpkgs
+    , secrets
     , identities
     , conduwuit
     , wireguard
@@ -54,7 +56,9 @@
         modules = [
           wireguard.nixosModules.default
           wireguard.nixosModules.archive
+          identities.nixosModules.default
           identities.nixosModules.users.crow
+          secrets.nixosModules.default
           # Needed for secret management
           sops-nix.nixosModules.sops
           # Used to persist data across reboots

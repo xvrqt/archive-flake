@@ -8,7 +8,7 @@ let
   cfg = config.services.forgejo;
 
   name = "forgejo";
-  port = 3000;
+  port = 3232;
   address = "127.0.0.1";
   domain = "irlqt.net";
   subDomain = "git";
@@ -63,6 +63,7 @@ in
           DOMAIN = "git.irlqt.net";
           ROOT_URL = "https://git.irlqt.net/";
           HTTP_PORT = port;
+          HTTP_ADDR = "127.0.0.1";
         };
 
         service = {

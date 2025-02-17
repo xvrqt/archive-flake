@@ -24,6 +24,7 @@ in
           "sonarr.irlqt.net" = "${ip}";
           "prowlarr.irlqt.net" = "${ip}";
           "nzbget.irlqt.net" = "${ip}";
+          "irlqt.me" = "${ip}";
         };
       };
       bootstrapDns = {

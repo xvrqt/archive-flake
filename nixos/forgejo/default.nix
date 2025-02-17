@@ -3,6 +3,8 @@
 , ...
 }:
 let
+  userInfo = (builtins.getFlake "github:xvrqt/identities-flake").userInfo;
+  allPublicKeys = lib.attrsets.mapAttrsToList (_: value: value.ssh.publicKey) userInfo;
   cfg = config.services.forgejo;
 
   name = "forgejo";
@@ -10,10 +12,12 @@ let
   address = "127.0.0.1";
   domain = "irlqt.net";
   subDomain = "git";
+
 in
 
 {
   users.groups.git.members = [ "crow" ];
+  users.users.forgejo.openssh.authorizedKeys.keys = allPublicKeys;
   age.secrets.forgejo_admin_password = {
     # The secret source file to be decrypted
     file = ./secrets/forgejo_admin_password.txt;
@@ -26,6 +30,7 @@ in
     symlink = true;
   };
   services = {
+    openssh.settings.AllowUsers = [ "forgejo" ];
     nginx = {
       # Setup the reverse proxy
       virtualHosts."${subDomain}.${domain}" = {
@@ -38,6 +43,7 @@ in
           proxyWebsockets = true;
           # Only allow people connected via Wireguard to connect
           extraConfig = ''
+            client_max_body_size 512M;
             allow 2.2.2.0/24;
             deny all;
           '';
@@ -60,7 +66,7 @@ in
         };
 
         service = {
-          DISABLE_REGISTRATION = false;
+          DISABLE_REGISTRATION = true;
         };
       };
 

@@ -1,10 +1,10 @@
 # Websites Hosted by NGINX
-{
-  pkgs,
-  config,
-  inputs,
-  ...
-}: let 
+{ pkgs
+, config
+, inputs
+, ...
+}:
+let
 in {
   services = {
     # Rely on the xvrqt/websites-flake
@@ -14,6 +14,10 @@ in {
       dnsProvider = "cloudflare";
       dnsTokenFile = config.sops.secrets."cloudflare/CF_DNS_API_TOKEN".path;
       sites = {
+        http-status-codes = {
+          enable = true;
+          domain = "http.xvrqt.com";
+        };
         homepage = {
           enable = true;
           domain = "xvrqt.com";

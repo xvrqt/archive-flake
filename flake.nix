@@ -17,7 +17,8 @@
     # Useful command line toold
     cli.url = "github:xvrqt/cli-flake";
     # Websites I'm hosting
-    websites.url = "github:xvrqt/website-flake";
+    # websites.url = "github:xvrqt/website-flake";
+    websites.url = "/home/crow/dev/website-flake";
     conduwuit.url = "github:girlbossceo/conduwuit";
     identities.url = "github:xvrqt/identities-flake";
     wireguard.url = "github:xvrqt/wireguard-flake";

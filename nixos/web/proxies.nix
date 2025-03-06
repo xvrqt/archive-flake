@@ -33,6 +33,12 @@ in
           proxyWebsockets = true;
         };
       };
+      virtualHosts."kofi.xvrqt.com" = {
+        forceSSL = true;
+        enableACME = true;
+        acmeRoot = null;
+        globalRedirect = "https://ko-fi.com/xvrqt";
+      };
       virtualHosts."matrix.xvrqt.com" = {
         forceSSL = true;
         enableACME = true;

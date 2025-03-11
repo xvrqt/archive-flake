@@ -5,15 +5,24 @@
     bandwidth = 512; #KBps
     address = "127.0.0.1";
     proto = {
+      http = {
+        enable = true;
+      };
+      socksProxy = {
+        enable = true;
+      };
+      httpProxy = {
+        enable = true;
+      };
       sam = {
         enable = true;
       };
+      i2cp = {
+        enable = true; # Torrenting
+        port = 7654;
+        address = "127.0.0.1";
+      };
     };
-    # i2cp = {
-    #   enable = true; # Torrenting
-    #   address = "127.0.0.1";
-    #   port = 7654;
-    # };
   };
 }
 

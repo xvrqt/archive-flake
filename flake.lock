@@ -707,11 +707,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1741174782,
-        "narHash": "sha256-dYRebJk58/d5Ej1G6xTOadTfG6tU5zFgXYrLsRJlrgw=",
+        "lastModified": 1741635347,
+        "narHash": "sha256-2aYfV44h18alHXopyfL4D9GsnpE5XlSVkp4MGe586VU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "def0dbbcea715d4514ca343ab4d6d7f3a1742da0",
+        "rev": "7fb8678716c158642ac42f9ff7a18c0800fea551",
         "type": "github"
       },
       "original": {
@@ -790,18 +790,17 @@
     },
     "homepage": {
       "locked": {
-        "lastModified": 1715293298,
-        "narHash": "sha256-E9mWu4zXMpfcnr2ZDWDFjVE51vi37Grg73xE5PI9OEo=",
-        "owner": "xvrqt",
-        "repo": "xvrqt_homepage",
-        "rev": "2d4b2263aa048843ab60f6c30420ddbe3bd03357",
-        "type": "github"
+        "lastModified": 1741296285,
+        "narHash": "sha256-50nO8XTAPRJcl7LuPiHyQmokEIJZnQ8kUigUF46IQ8Y=",
+        "ref": "refs/heads/master",
+        "rev": "f7779c4b097f44c04da3434b3e538aa2ca9d7f51",
+        "revCount": 3,
+        "type": "git",
+        "url": "https://git.irlqt.net/crow/homepage-website-flake"
       },
       "original": {
-        "owner": "xvrqt",
-        "ref": "deploy",
-        "repo": "xvrqt_homepage",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.irlqt.net/crow/homepage-website-flake"
       }
     },
     "http": {
@@ -1259,11 +1258,11 @@
     },
     "nixpkgs_8": {
       "locked": {
-        "lastModified": 1741037377,
-        "narHash": "sha256-SvtvVKHaUX4Owb+PasySwZsoc5VUeTf1px34BByiOxw=",
+        "lastModified": 1741462378,
+        "narHash": "sha256-ZF3YOjq+vTcH51S+qWa1oGA9FgmdJ67nTNPG2OIlXDc=",
         "owner": "NixOs",
         "repo": "nixpkgs",
-        "rev": "02032da4af073d0f6110540c8677f16d4be0117f",
+        "rev": "2d9e4457f8e83120c9fdf6f1707ed0bc603e5ac9",
         "type": "github"
       },
       "original": {
@@ -1649,11 +1648,11 @@
         "moomin-orb": "moomin-orb"
       },
       "locked": {
-        "lastModified": 1741291321,
-        "narHash": "sha256-v1fFUFawe9zQEfLDaPkSzVWtg3OeCOB/8djeAE3L33o=",
+        "lastModified": 1741296307,
+        "narHash": "sha256-r255iAC4O3He02W4GPkkgUFC6FjBWAYrGGMbXf73vps=",
         "owner": "xvrqt",
         "repo": "website-flake",
-        "rev": "f03f7c98633908d8a3883661e39407bde0864a0f",
+        "rev": "0fde36b1b5e301690b2e099d63890601dbad821c",
         "type": "github"
       },
       "original": {

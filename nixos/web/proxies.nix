@@ -37,7 +37,7 @@ in
         forceSSL = true;
         enableACME = true;
         acmeRoot = null;
-        globalRedirect = "https://ko-fi.com/xvrqt";
+        globalRedirect = "ko-fi.com/xvrqt";
       };
       virtualHosts."matrix.xvrqt.com" = {
         forceSSL = true;

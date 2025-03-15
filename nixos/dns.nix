@@ -1,5 +1,5 @@
 let
-  ip = "2.2.2.1";
+  ip = "10.128.0.1";
 in
 {
 
@@ -14,8 +14,8 @@ in
       customDNS = {
         mapping = {
           "git.irlqt.net" = "${ip}";
-          "llm.irlqt.net" = "2.2.2.4";
-          "cui.irlqt.net" = "2.2.2.4";
+          "llm.irlqt.net" = "10.128.0.4";
+          "cui.irlqt.net" = "10.128.0.4";
           "jellyseerr.irlqt.net" = "${ip}";
           "search.irlqt.net" = "${ip}";
           "torrents.irlqt.net" = "${ip}";

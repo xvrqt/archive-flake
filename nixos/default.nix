@@ -20,7 +20,7 @@
     # I2P Mix-Overlay Network
     ./i2p.nix
     # Mesh Network
-    #./reticulum.nix
+    ./reticulum.nix
     ./conduwuit
     ./forgejo
     # Run an instance of peer tube
@@ -154,8 +154,8 @@
     nameservers = [ "1.1.1.1" "8.8.8.8" ];
     firewall = {
       enable = true;
-      allowedUDPPorts = [ 5349 53 5350 32400 ];
-      allowedTCPPorts = [ 23 22 80 53 8448 3478 3479 5055 443 3000 2049 18080 3333 5555 7777 9000 32400 ];
+      allowedUDPPorts = [ 4444 4447 5349 53 5350 32400 7070 8484 8383 9292 ];
+      allowedTCPPorts = [ 23 22 80 53 8448 3478 3479 5055 443 4444 4447 9292 3000 2049 18080 3333 5555 7777 9000 32400 8383 8484 7070 ];
     };
   };
 

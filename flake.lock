@@ -1667,11 +1667,11 @@
         "secrets": "secrets_3"
       },
       "locked": {
-        "lastModified": 1738867357,
-        "narHash": "sha256-abE75/ew7TIgRfjuDihIyS8yFv2GEVTTVhsVzlBaKsc=",
+        "lastModified": 1742013234,
+        "narHash": "sha256-LnfZBesOBnkY10Lv09N+aDcV4bj80ZH9pGFPbVLvnQs=",
         "owner": "xvrqt",
         "repo": "wireguard-flake",
-        "rev": "8b860b5539df5b1c85f64acb775ff3ad008777c8",
+        "rev": "15dd28acebb8ff595c4670a0608290a8a521afa1",
         "type": "github"
       },
       "original": {

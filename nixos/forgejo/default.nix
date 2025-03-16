@@ -44,12 +44,12 @@ in
           # Only allow people connected via Wireguard to connect
           extraConfig = ''
             client_max_body_size 512M;
-            allow 2.2.2.0/24;
-            deny all;
           '';
         };
       };
     };
+    # allow 2.2.2.0/24;
+    # deny all;
     forgejo = {
       enable = true;
 

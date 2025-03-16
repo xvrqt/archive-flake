@@ -71,19 +71,6 @@ in
           # '';
         };
       };
-      virtualHosts."qbittorrent.irlqt.me" = {
-        forceSSL = true;
-        enableACME = true;
-        acmeRoot = null;
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:8080";
-          proxyWebsockets = true;
-          extraConfig = ''
-            allow 2.2.2.0/24;
-            deny all;
-          '';
-        };
-      };
       # virtualHosts."immich.xvrqt.com" = {
       virtualHosts."immich.irlqt.net" = {
         forceSSL = true;
@@ -98,7 +85,7 @@ in
             	    client_max_body_size 5000M;
 
 
-                  allow 2.2.2.0/24;
+            allow 10.128.0.0/9;
                   deny all;
             	    proxy_read_timeout 600s;
             	    proxy_send_timeout 600s;
@@ -106,16 +93,16 @@ in
           '';
         };
       };
-      virtualHosts."jellyfin.irlqt.me" = {
-        forceSSL = true;
-        http2 = true;
-        enableACME = true;
-        acmeRoot = null;
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:8096";
-          proxyWebsockets = true;
-        };
-      };
+      # virtualHosts."jellyfin.irlqt.me" = {
+      #   forceSSL = true;
+      #   http2 = true;
+      #   enableACME = true;
+      #   acmeRoot = null;
+      #   locations."/" = {
+      #     proxyPass = "http://127.0.0.1:8096";
+      #     proxyWebsockets = true;
+      #   };
+      # };
     };
   };
 }

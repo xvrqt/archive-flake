@@ -40,12 +40,12 @@
         };
         socksProxy = {
           enable = true;
-          address = "2.2.2.1";
+          address = "10.128.0.1";
           port = 4447;
         };
         httpProxy = {
           enable = true;
-          address = "2.2.2.1";
+          address = "10.128.0.1";
           port = 4444;
         };
         # Used for torrenting 

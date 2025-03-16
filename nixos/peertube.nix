@@ -41,8 +41,6 @@ in
           proxyWebsockets = true;
           # Only allow people connected via Wireguard to connect
           extraConfig = ''
-            allow 2.2.2.0/24;
-            deny all;
           '';
         };
       };

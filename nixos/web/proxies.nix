@@ -21,7 +21,7 @@ in
     nginx = {
       virtualHosts."ollama.irlqt.net" = {
         locations."/" = {
-          proxyPass = "http://2.2.2.4:6547";
+          proxyPass = "http://10.128.0.4:6547";
           proxyWebsockets = true;
         };
       };

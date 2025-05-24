@@ -12,7 +12,7 @@ in
 
   services = {
     "${name}" = {
-      enable = false;
+      enable = true;
       user = user;
       # This group has access to '/zpools/hdd/media' and '/zpools/hdd/downloads'
       group = "pirates";
@@ -33,7 +33,7 @@ in
           proxyWebsockets = true;
           # Only allow people connected via Wireguard to connect
           extraConfig = ''
-            allow 2.2.2.0/24;
+            allow 10.128.0.0/16;
             deny all;
           '';
         };

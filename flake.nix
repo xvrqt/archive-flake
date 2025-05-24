@@ -3,6 +3,7 @@
   inputs = {
     # Essentials
     nixpkgs.url = "github:NixOs/nixpkgs/nixpkgs-unstable";
+    # nixpkgs.url = "github:NixOs/nixpkgs/nixos-24.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +22,8 @@
     # websites.url = "/home/crow/dev/website-flake";
     conduwuit.url = "github:girlbossceo/conduwuit";
     identities.url = "github:xvrqt/identities-flake";
-    wireguard.url = "github:xvrqt/wireguard-flake";
+    wireguard.url = "git+https://git.irlqt.net/crow/wireguard-flake";
+    # wireguard.url = "/home/crow/dev/wireguard-flake";
     secrets.url = "github:xvrqt/secrets-flake";
   };
 

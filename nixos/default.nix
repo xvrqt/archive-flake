@@ -9,19 +9,20 @@
   imports = [
     # Media Fetching, Cataloging, and Playback Services
     ./arr
+    ./cryptpad.nix
     # NGINX Webserver & Website Configuration
     ./web
     # Running a Monero node to help the network :]
-    ./monero.nix
+    # ./monero.nix
     # Configure and run a Misskey social network
     ./misskey.nix
     # Immich server to sort and oragnize photos
     ./image.nix
     # I2P Mix-Overlay Network
-    ./i2p.nix
+    # ./i2p.nix
     # Mesh Network
-    ./reticulum.nix
-    ./conduwuit
+    # ./reticulum.nix
+    # ./conduwuit
     ./forgejo
     # Run an instance of peer tube
     #./peertube.nix

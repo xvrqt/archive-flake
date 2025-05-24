@@ -13,7 +13,7 @@ let
   # Our two pools
   zpools = [ "SSD" "HDD" ];
   # Latest LTS Linux Kernel officially supported by OpenZFS
-  kernelPkg = pkgs.linuxPackages_6_12;
+  kernelPkg = pkgs.linuxPackages_6_13;
   # ZFS requires us to have a unique networking host ID
   hostID = "63e25167";
 in

@@ -26,7 +26,7 @@ in
     # Just in case it's ever not included by the parent
     supportedFilesystems = [ "zfs" ];
     # Ensure the kernel we're using supports ZFS (6.12 LTS)
-    kernelPackages = lib.mkForce kernelPkg;
+    # kernelPackages = lib.mkForce kernelPkg;
 
     zfs = {
       # We are not booting from ZFS

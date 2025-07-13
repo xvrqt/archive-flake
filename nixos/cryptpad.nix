@@ -30,6 +30,7 @@ in
       # Setup the reverse proxy
       virtualHosts."${subDomain}.${domain}" = {
         serverName = "cryptpad.irlqt.net";
+        listenAddresses = [ "10.128.0.1" ];
 
         http2 = true;
         forceSSL = true;

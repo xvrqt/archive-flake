@@ -32,6 +32,7 @@ in
     nginx = {
       # Setup the reverse proxy
       virtualHosts."${subDomain}.${domain}" = {
+        listenAddresses = [ "10.128.0.1" ];
         http2 = true;
         forceSSL = true;
         acmeRoot = null;

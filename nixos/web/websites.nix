@@ -38,16 +38,18 @@ in {
           enable = true;
           domain = "gol.xvrqt.com";
         };
-        graphics = {
-          enable = true;
-          domain = "graphics.xvrqt.com";
-        };
       };
     };
 
     # Additional Websites that *should* be inside the website flake but are not
     # Likely because they are under active development
     nginx = {
+      # appendHttpConfig = ''
+      #   map $server_addr $root {
+      #     10.128.0.1 "/var/www/dorkweb";
+      #     default "/var/www/dorktest";
+      #   }
+      # '';
       virtualHosts."archives.irlqt.me" = {
         forceSSL = true;
         enableACME = true;
@@ -55,6 +57,25 @@ in {
         locations."/" = {
           root = "/var/www/irlqt";
         };
+      };
+
+      virtualHosts."gay.irlqt.me" = {
+        listenAddresses = [ "10.128.0.1" "192.168.1.6" ];
+        forceSSL = true;
+        enableACME = true;
+        acmeRoot = null;
+
+        extraConfig = ''
+          root $root;
+          set $root /var/www/dorktest;
+          if ($server_addr = "10.128.0.1") {
+          # if ($server_addr) {
+            set $root /var/www/dorkweb;
+          }
+        '';
+        # locations."/" = {
+        #   root = "$root";
+        # };
       };
 
       virtualHosts."webgl.irlqt.me" = {

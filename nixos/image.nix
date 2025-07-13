@@ -5,6 +5,11 @@
 , ...
 }: {
 
+  users.users.immich = {
+    home = "/var/lib/immich";
+    createHome = true;
+  };
+
   environment.systemPackages = [
     pkgs.oxipng # PNG Crusher
     pkgs.exiftool # EXIF Data Reading/Writing

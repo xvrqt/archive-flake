@@ -16,6 +16,8 @@ in
 
     nginx = {
       virtualHosts."${subDomain}.${domain}" = {
+        # This is actually prolly wrong since it's available externally ?
+        listenAddresses = [ "10.128.0.1" ];
         forceSSL = true;
         acmeRoot = null;
         enableACME = true;

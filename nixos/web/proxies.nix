@@ -19,7 +19,12 @@ in
 {
   services = {
     nginx = {
+      # Change this so that it pulls from identities and wireguard
+      # move into websites
+      defaultListenAddresses = [ "192.168.1.6" ];
+
       virtualHosts."ollama.irlqt.net" = {
+        listenAddresses = [ "10.128.0.1" ];
         locations."/" = {
           proxyPass = "http://10.128.0.4:6547";
           proxyWebsockets = true;
@@ -73,6 +78,7 @@ in
       };
       # virtualHosts."immich.xvrqt.com" = {
       virtualHosts."immich.irlqt.net" = {
+        listenAddresses = [ "10.128.0.1" ];
         forceSSL = true;
         enableACME = true;
         acmeRoot = null;
@@ -85,8 +91,8 @@ in
             	    client_max_body_size 5000M;
 
 
-            allow 10.128.0.0/9;
-                  deny all;
+            # allow 10.128.0.0/9;
+            #       deny all;
             	    proxy_read_timeout 600s;
             	    proxy_send_timeout 600s;
             	    send_timeout 600s;

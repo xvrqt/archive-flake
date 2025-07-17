@@ -26,6 +26,7 @@ in
           "sonarr.irlqt.net" = "${ip}";
           "prowlarr.irlqt.net" = "${ip}";
           "nzbget.irlqt.net" = "${ip}";
+          "archive.irlqt.net" = "192.168.1.6";
           "irlqt.me" = "${ip}";
         };
       };

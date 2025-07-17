@@ -3,28 +3,25 @@
   inputs = {
     # Essentials
     nixpkgs.url = "github:NixOs/nixpkgs/nixpkgs-unstable";
-    # nixpkgs.url = "github:NixOs/nixpkgs/nixos-24.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Secrets
-    sops-nix.url = "github:Mic92/sops-nix";
     # Ephemeral File System
     impermanence.url = "github:nix-community/impermanence";
 
     # My Flakes
     # Useful command line toold
-    cli.url = "github:xvrqt/cli-flake";
+    cli.url = "git+https://git.irlqt.net/crow/cli-flake";
     # Websites I'm hosting
     websites.url = "/home/crow/dev/website-flake";
     # websites.url = "git+https://git.irlqt.net/crow/website-flake";
     conduwuit.url = "github:girlbossceo/conduwuit";
-    identities.url = "github:xvrqt/identities-flake";
+    identities.url = "git+https://git.irlqt.net/crow/identities-flake";
     wireguard.url = "git+https://git.irlqt.net/crow/wireguard-flake";
     # wireguard.url = "/home/crow/dev/wireguard-flake";
-    secrets.url = "github:xvrqt/secrets-flake";
+    secrets.url = "git+https://git.irlqt.net/crow/secrets-flake";
   };
 
   outputs =
@@ -34,7 +31,6 @@
     , conduwuit
     , wireguard
     , home-manager
-    , sops-nix
     , impermanence
     , cli
     , websites
@@ -62,8 +58,6 @@
           identities.nixosModules.default
           identities.nixosModules.users.crow
           secrets.nixosModules.default
-          # Needed for secret management
-          sops-nix.nixosModules.sops
           # Used to persist data across reboots
           impermanence.nixosModules.impermanence
           # Websites Hosted by this server

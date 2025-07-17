@@ -12,7 +12,7 @@ in {
     websites = {
       enable = true;
       dnsProvider = "cloudflare";
-      dnsTokenFile = config.sops.secrets."cloudflare/CF_DNS_API_TOKEN".path;
+      # dnsTokenFile = config.sops.secrets."cloudflare/CF_DNS_API_TOKEN".path;
       sites = {
         http-status-codes = {
           enable = true;
@@ -59,7 +59,7 @@ in {
         };
       };
 
-      virtualHosts."gay.irlqt.me" = {
+      virtualHosts."gays.irlqt.me" = {
         listenAddresses = [ "10.128.0.1" "192.168.1.6" ];
         forceSSL = true;
         enableACME = true;

@@ -81,11 +81,6 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-  # TODO: Move to the website-flake eventually
-  sops.defaultSopsFile = ./secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
-  sops.age.keyFile = "/persist/sops/age/keys.txt";
-  sops.secrets."cloudflare/CF_DNS_API_TOKEN" = { owner = "acme"; };
 
   services = {
 
@@ -154,7 +149,28 @@
   networking = {
     hostName = "archive";
     networkmanager.enable = true;
-    nameservers = [ "1.1.1.1" "8.8.8.8" ];
+    nameservers = [
+      # Everything below, but also blocks bad links, ads, and maps into the
+      # Dorkweb services
+      "10.255.0.0"
+      # Quad9 IPv4
+      "9.9.9.9"
+      "149.112.112.122"
+      # Quad9 IPv6
+      "2620:fe::fe"
+      "2620:fe::9"
+      # Quad9 TLS
+      "https://dns.quad9.net/dns-query"
+      "tcp-tls:dns.quad9.net"
+      # LAN Router
+      "192.168.1.1"
+    ];
+    # networkmanager.dhcp = "dhcpcd";
+    # dhcpcd = {
+    #   enable = true;
+    #   extraConfig = "nohook resolv.conf";
+    # };
+
     firewall = {
       enable = true;
       allowedUDPPorts = [ 4444 4447 5349 53 5350 32400 7070 8484 8383 9292 ];

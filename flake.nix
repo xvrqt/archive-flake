@@ -15,9 +15,8 @@
     # Useful command line toold
     cli.url = "git+https://git.irlqt.net/crow/cli-flake";
     # Websites I'm hosting
-    websites.url = "/home/crow/dev/website-flake";
-    # websites.url = "git+https://git.irlqt.net/crow/website-flake";
-    conduwuit.url = "github:girlbossceo/conduwuit";
+    # websites.url = "/home/crow/dev/website-flake";
+    websites.url = "git+https://git.irlqt.net/crow/website-flake";
     identities.url = "git+https://git.irlqt.net/crow/identities-flake";
     wireguard.url = "git+https://git.irlqt.net/crow/wireguard-flake";
     # wireguard.url = "/home/crow/dev/wireguard-flake";
@@ -28,7 +27,6 @@
     { nixpkgs
     , secrets
     , identities
-    , conduwuit
     , wireguard
     , home-manager
     , impermanence

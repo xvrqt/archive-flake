@@ -46,8 +46,8 @@
       "inputs": {
         "darwin": "darwin_3",
         "home-manager": "home-manager_4",
-        "nixpkgs": "nixpkgs_10",
-        "systems": "systems_7"
+        "nixpkgs": "nixpkgs_11",
+        "systems": "systems_8"
       },
       "locked": {
         "lastModified": 1736955230,
@@ -67,8 +67,8 @@
       "inputs": {
         "darwin": "darwin_4",
         "home-manager": "home-manager_5",
-        "nixpkgs": "nixpkgs_11",
-        "systems": "systems_9"
+        "nixpkgs": "nixpkgs_12",
+        "systems": "systems_10"
       },
       "locked": {
         "lastModified": 1736955230,
@@ -309,11 +309,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1752798675,
-        "narHash": "sha256-oMJhxLVGVC7v0ReNQ/vFVKMQOPUixg/74MnZZ1Wkv4s=",
+        "lastModified": 1753132348,
+        "narHash": "sha256-0i3jU9AHuNXb0wYGzImnVwaw+miE0yW13qfjC0F+fIE=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "dcfd70f80fe6d872c2dc58fe3be384a681e56fea",
+        "rev": "e4bf85da687027cfc4a8853ca11b6b86ce41d732",
         "type": "github"
       },
       "original": {
@@ -481,6 +481,25 @@
         "type": "github"
       }
     },
+    "irlqt-net": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_9",
+        "utils": "utils_2"
+      },
+      "locked": {
+        "lastModified": 1753153827,
+        "narHash": "sha256-jnhZ5GUUKqykDLVIEgP/GE/bsjv/0QzgTRs5IFed7dA=",
+        "ref": "refs/heads/master",
+        "rev": "815e93ee6a0207f93d0c766f55fdab894bfd635a",
+        "revCount": 3,
+        "type": "git",
+        "url": "https://git.irlqt.net/crow/irlqt-net-website-flake"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.irlqt.net/crow/irlqt-net-website-flake"
+      }
+    },
     "moomin-orb": {
       "locked": {
         "lastModified": 1751834140,
@@ -514,6 +533,22 @@
     },
     "nixpkgs_10": {
       "locked": {
+        "lastModified": 1752950548,
+        "narHash": "sha256-NS6BLD0lxOrnCiEOcvQCDVPXafX1/ek1dfJHX1nUIzc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "c87b95e25065c028d31a94f06a62927d18763fdf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_11": {
+      "locked": {
         "lastModified": 1703013332,
         "narHash": "sha256-+tFNwMvlXLbJZXiMHqYq77z/RfmpfpiI3yjL6o/Zo9M=",
         "owner": "NixOS",
@@ -528,7 +563,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_11": {
+    "nixpkgs_12": {
       "locked": {
         "lastModified": 1703013332,
         "narHash": "sha256-+tFNwMvlXLbJZXiMHqYq77z/RfmpfpiI3yjL6o/Zo9M=",
@@ -562,11 +597,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1752747119,
-        "narHash": "sha256-2Kp9St3Pbsmu+xMsobLcgzzUxPvZR7alVJWyuk2BAPc=",
+        "lastModified": 1752997324,
+        "narHash": "sha256-vtTM4oDke3SeDj+1ey6DjmzXdq8ZZSCLWSaApADDvIE=",
         "owner": "NixOs",
         "repo": "nixpkgs",
-        "rev": "fa0ef8a6bb1651aa26c939aeb51b5f499e86b0ec",
+        "rev": "7c688a0875df5a8c28a53fb55ae45e94eae0dddb",
         "type": "github"
       },
       "original": {
@@ -658,11 +693,11 @@
     },
     "nixpkgs_9": {
       "locked": {
-        "lastModified": 1752480373,
-        "narHash": "sha256-JHQbm+OcGp32wAsXTE/FLYGNpb+4GLi5oTvCxwSoBOA=",
+        "lastModified": 1752950548,
+        "narHash": "sha256-NS6BLD0lxOrnCiEOcvQCDVPXafX1/ek1dfJHX1nUIzc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "62e0f05ede1da0d54515d4ea8ce9c733f12d9f08",
+        "rev": "c87b95e25065c028d31a94f06a62927d18763fdf",
         "type": "github"
       },
       "original": {
@@ -831,6 +866,21 @@
         "type": "github"
       }
     },
+    "systems_10": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "systems_2": {
       "locked": {
         "lastModified": 1681028828,
@@ -971,7 +1021,25 @@
     },
     "utils_2": {
       "inputs": {
-        "systems": "systems_8"
+        "systems": "systems_7"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "utils_3": {
+      "inputs": {
+        "systems": "systems_9"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -994,23 +1062,21 @@
         "game-of-life": "game-of-life",
         "homepage": "homepage",
         "http": "http",
+        "irlqt-net": "irlqt-net",
         "moomin-orb": "moomin-orb",
-        "nixpkgs": "nixpkgs_9",
+        "nixpkgs": "nixpkgs_10",
         "secrets": "secrets_3",
-        "utils": "utils_2"
+        "utils": "utils_3"
       },
       "locked": {
-        "lastModified": 1752721665,
-        "narHash": "sha256-BkN2SPl2qehAvi3pwSRT0E2x3UsZCZLN8Sz4TpyRenY=",
-        "ref": "refs/heads/master",
-        "rev": "ab41840506ff4630f4d969311b58ed4ee0bc7635",
-        "revCount": 53,
-        "type": "git",
-        "url": "https://git.irlqt.net/crow/website-flake"
+        "lastModified": 1753153910,
+        "narHash": "sha256-FyEVnRbzxknZ3Tw1Pyn6U1cnZZCcfVnH64Y7yf9l54s=",
+        "path": "/home/crow/dev/website-flake",
+        "type": "path"
       },
       "original": {
-        "type": "git",
-        "url": "https://git.irlqt.net/crow/website-flake"
+        "path": "/home/crow/dev/website-flake",
+        "type": "path"
       }
     },
     "wireguard": {

@@ -38,6 +38,11 @@ in {
           enable = true;
           domain = "gol.xvrqt.com";
         };
+        # Run on the lighthouse (since it's the homepage for that machine)
+        irlqt-net = {
+          enable = false;
+          domain = "irlqt.net";
+        };
       };
     };
 
@@ -59,7 +64,7 @@ in {
         };
       };
 
-      virtualHosts."gays.irlqt.me" = {
+      virtualHosts."girls.irlqt.me" = {
         listenAddresses = [ "10.128.0.1" "192.168.1.6" ];
         forceSSL = true;
         enableACME = true;
@@ -69,7 +74,6 @@ in {
           root $root;
           set $root /var/www/dorktest;
           if ($server_addr = "10.128.0.1") {
-          # if ($server_addr) {
             set $root /var/www/dorkweb;
           }
         '';

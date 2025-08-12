@@ -15,7 +15,7 @@
         host = "irlqt.me";
         ssl = true;
         webserver.nginx = {
-          listenAddresses = [ "10.128.0.1" "192.168.1.6" ];
+          # listenAddresses = [ "10.128.0.1" "192.168.1.6" ];
           forceSSL = true;
           enableACME = true;
           acmeRoot = null;

@@ -21,10 +21,10 @@ in
     nginx = {
       # Change this so that it pulls from identities and wireguard
       # move into websites
-      defaultListenAddresses = [ "192.168.1.6" ];
+      # defaultListenAddresses = [ "192.168.1.6" ];
 
       virtualHosts."ollama.irlqt.net" = {
-        listenAddresses = [ "10.128.0.1" ];
+        # listenAddresses = [ "10.128.0.1" ];
         locations."/" = {
           proxyPass = "http://10.128.0.4:6547";
           proxyWebsockets = true;
@@ -78,7 +78,7 @@ in
       };
       # virtualHosts."immich.xvrqt.com" = {
       virtualHosts."immich.irlqt.net" = {
-        listenAddresses = [ "10.128.0.1" ];
+        # listenAddresses = [ "10.128.0.1" ];
         forceSSL = true;
         enableACME = true;
         acmeRoot = null;

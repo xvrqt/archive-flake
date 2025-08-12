@@ -65,6 +65,10 @@ in
 
         # Search engines
         engines = lib.mapAttrsToList (name: value: { inherit name; } // value) {
+          "github".disabled = false;
+          "crates.io".disabled = false;
+          "stackoverflow".disabled = false;
+          "superuser".disabled = false;
           "brave".disabled = true;
           "qwant".disabled = true;
           "curlie".disabled = true;
@@ -109,6 +113,10 @@ in
           "wikivoyage".disabled = false;
           "wikivoyage".weight = 0.5;
           "bing images".disabled = false;
+          "reddit".disabled = false;
+          "reddit".weight = 1.5;
+          "lemmyposts".disabled = false;
+          "lemmyposts".weight = 1.6;
           "google images".disabled = false;
           "artic".disabled = false;
           "deviantart".disabled = false;

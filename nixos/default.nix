@@ -10,7 +10,7 @@
     # Media Fetching, Cataloging, and Playback Services
 
     ./arr
-    # ./bookstack
+    ./bookstack
     ./cryptpad.nix
     # NGINX Webserver & Website Configuration
     ./web
@@ -30,9 +30,9 @@
     #./peertube.nix
     #./next-cloud.nix
     # Run a DNS
-    ./dns.nix
+    # ./dns.nix
     # Search Engine
-    ./searx.nix
+    ./searx
     # Gummi-boot setup, kernel modules, etc
     ./boot.nix
     # Setup and import zpools, boot device, unlock system device, persist data
@@ -83,7 +83,11 @@
   };
 
   services = {
-
+    # tailscale = {
+    #   enable = true;
+    #   useRoutingFeatures = "server";
+    #   openFirewall = true;
+    # };
     # Needed by something, but I'm not sure what (arr probably?)
     xserver.videoDrivers = [ "nvidia" ];
   };
@@ -171,10 +175,11 @@
     #   extraConfig = "nohook resolv.conf";
     # };
 
+
     firewall = {
-      enable = true;
-      allowedUDPPorts = [ 4444 4447 5349 53 5350 32400 7070 8484 8383 9292 ];
-      allowedTCPPorts = [ 23 22 80 53 8448 3478 3479 5055 443 4444 4447 9292 3000 2049 18080 3333 5555 7777 9000 32400 8383 8484 7070 ];
+      enable = lib.mkForce false;
+      allowedUDPPorts = [ 4444 8443 4447 5349 53 5350 32400 7070 8484 8383 9292 16842 config.services.tailscale.port ];
+      allowedTCPPorts = [ 8443 23 22 80 53 8448 3478 3479 5055 443 4444 4447 9292 3000 2049 18080 3333 5555 7777 9000 32400 8383 8484 7070 ];
     };
   };
 
@@ -224,6 +229,7 @@
       };
     };
   };
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -1,5 +1,5 @@
 let
-  ip = "10.128.0.1";
+  ip = "100.64.0.3";
 in
 { inputs, ... }: {
 
@@ -15,6 +15,7 @@ in
         customDNS = {
           mapping = {
             "dns.irlqt.net" = "135.181.109.173";
+            "gateway.irlqt.net" = "135.181.109.173";
             "cryptpad.irlqt.net" = "${ip}";
             "cryptpad-sandbox.irlqt.net" = "${ip}";
             "git.irlqt.net" = "${ip}";

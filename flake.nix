@@ -15,10 +15,9 @@
     # Useful command line toold
     cli.url = "git+https://git.irlqt.net/crow/cli-flake";
     # Websites I'm hosting
-    websites.url = "/home/crow/dev/website-flake";
-    # websites.url = "git+https://git.irlqt.net/crow/website-flake";
+    websites.url = "git+https://git.irlqt.net/crow/website-flake";
     identities.url = "git+https://git.irlqt.net/crow/identities-flake";
-    wireguard.url = "git+https://git.irlqt.net/crow/wireguard-flake";
+    networking.url = "git+https://git.irlqt.net/crow/networking-flake";
     # wireguard.url = "/home/crow/dev/wireguard-flake";
     secrets.url = "git+https://git.irlqt.net/crow/secrets-flake";
   };
@@ -27,7 +26,7 @@
     { nixpkgs
     , secrets
     , identities
-    , wireguard
+    , networking
     , home-manager
     , impermanence
     , cli
@@ -51,8 +50,7 @@
         inherit pkgs;
         specialArgs = { inherit inputs machine; };
         modules = [
-          wireguard.nixosModules.default
-          wireguard.nixosModules.archive
+          networking.nixosModules.archive
           identities.nixosModules.default
           identities.nixosModules.users.crow
           secrets.nixosModules.default

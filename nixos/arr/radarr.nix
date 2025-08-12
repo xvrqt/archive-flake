@@ -24,8 +24,12 @@ in
     nginx = {
       # Setup the reverse proxy
       virtualHosts."${subDomain}.${domain}" = {
+        # listen = [{
+        #   addr = "0.0.0.0/128";
+        #   port = 8443;
+        # }];
         # listenAddresses = [ "[2002:881b:3142:0:add9:173c:1dc0:a0fa]" ];
-        listenAddresses = [ "10.128.0.1" ];
+        # listenAddresses = [ "10.128.0.1" "100.64.0.0/10" ];
         http2 = true;
         forceSSL = true;
         acmeRoot = null;
@@ -34,11 +38,11 @@ in
           proxyPass = "http://${address}:${(builtins.toString port)}";
           proxyWebsockets = true;
           # Only allow people connected via Wireguard to connect
-          extraConfig = ''
-            proxy_ssl_server_name on;
-            # allow 10.128.0.0/9;
-            # deny all;
-          '';
+          # extraConfig = ''
+          #   proxy_ssl_server_name on;
+          #   # allow 10.128.0.0/9;
+          #   # deny all;
+          # '';
         };
       };
     };

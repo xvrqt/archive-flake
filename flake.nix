@@ -18,7 +18,6 @@
     websites.url = "git+https://git.irlqt.net/crow/website-flake";
     identities.url = "git+https://git.irlqt.net/crow/identities-flake";
     networking.url = "git+https://git.irlqt.net/crow/networking-flake";
-    # wireguard.url = "/home/crow/dev/wireguard-flake";
     secrets.url = "git+https://git.irlqt.net/crow/secrets-flake";
   };
 

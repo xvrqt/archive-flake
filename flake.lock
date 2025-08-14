@@ -609,11 +609,11 @@
         "secrets": "secrets_3"
       },
       "locked": {
-        "lastModified": 1755027046,
-        "narHash": "sha256-mPxGQVRcqKzicig615ZHaohcL4QF/PtQOn0KT3Hyx9Y=",
+        "lastModified": 1755030481,
+        "narHash": "sha256-cSCC7w/oc4HBGUISE94Y/jAdfW8o5ivJ3zAzpbzcJd4=",
         "ref": "refs/heads/master",
-        "rev": "34f76365a0b460556531c3efed2591d894f2df94",
-        "revCount": 1,
+        "rev": "04d2ebad5971b893c1a875be4903ce84463d2e64",
+        "revCount": 2,
         "type": "git",
         "url": "https://git.irlqt.net/crow/networking-flake"
       },

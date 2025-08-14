@@ -50,7 +50,6 @@
         specialArgs = { inherit inputs machine; };
         modules = [
           networking.nixosModules.archive
-          identities.nixosModules.default
           identities.nixosModules.users.crow
           secrets.nixosModules.default
           # Used to persist data across reboots

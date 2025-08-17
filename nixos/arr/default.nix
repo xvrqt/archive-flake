@@ -14,7 +14,7 @@ in
   imports = [
     ## MEDIA STREAMING SERVICES ##
     # Plex
-    (import ./plex.nix { inherit domain dataPath; })
+    (import ./plex.nix { inherit pkgs domain dataPath; })
     ## MEDIA 
     # Public media picker
     (import ./jellyseerr.nix { inherit domain; })

@@ -355,11 +355,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1755121891,
-        "narHash": "sha256-UtYkukiGnPRJ5rpd4W/wFVrLMh8fqtNkqHTPgHEtrqU=",
+        "lastModified": 1755313937,
+        "narHash": "sha256-pQb7bNcolxYGRiylUCrTddiF+qW2wsUiM9+eRIDUrVU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "279ca5addcdcfa31ac852b3ecb39fc372684f426",
+        "rev": "2a749f4790a14f7168be67cdf6e548ef1c944e10",
         "type": "github"
       },
       "original": {
@@ -609,11 +609,11 @@
         "secrets": "secrets_3"
       },
       "locked": {
-        "lastModified": 1755030481,
-        "narHash": "sha256-cSCC7w/oc4HBGUISE94Y/jAdfW8o5ivJ3zAzpbzcJd4=",
+        "lastModified": 1755314000,
+        "narHash": "sha256-bNBqdq1C/BSCT0M51efhxAwbpE20nfgZx72+amlNvfI=",
         "ref": "refs/heads/master",
-        "rev": "04d2ebad5971b893c1a875be4903ce84463d2e64",
-        "revCount": 2,
+        "rev": "daa980d70c533d42db61777473ba7b7b916b1d36",
+        "revCount": 3,
         "type": "git",
         "url": "https://git.irlqt.net/crow/networking-flake"
       },
@@ -752,11 +752,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1753432016,
-        "narHash": "sha256-cnL5WWn/xkZoyH/03NNUS7QgW5vI7D1i74g48qplCvg=",
+        "lastModified": 1755268003,
+        "narHash": "sha256-nNaeJjo861wFR0tjHDyCnHs1rbRtrMgxAKMoig9Sj/w=",
         "owner": "NixOs",
         "repo": "nixpkgs",
-        "rev": "6027c30c8e9810896b92429f0092f624f7b1aace",
+        "rev": "32f313e49e42f715491e1ea7b306a87c16fe0388",
         "type": "github"
       },
       "original": {

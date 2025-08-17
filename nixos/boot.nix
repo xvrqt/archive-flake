@@ -8,7 +8,7 @@
   boot = {
     # Use the latest kernel
     # This is overidden by zfs.nix to ensure compatibility
-    kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_6_15;
 
     loader = {
       # Seconds until the first boot entry is selected

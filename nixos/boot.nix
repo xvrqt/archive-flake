@@ -1,6 +1,5 @@
 { lib
 , pkgs
-, config
 , ...
 }:
 # Boot Settings
@@ -8,6 +7,8 @@
   boot = {
     # Use the latest kernel
     # This is overidden by zfs.nix to ensure compatibility
+    # You _did_ check that the kernel you're using is compatible with ZFS, right?
+    # That could be very bad if you didn't
     kernelPackages = lib.mkDefault pkgs.linuxPackages_6_15;
 
     loader = {

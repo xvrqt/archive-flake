@@ -8,28 +8,41 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Sensible NixOS defaults (enables flakes, garbage collection, sets timezone, etc...)
+    defaults.url = "git+https://git.irlqt.net/crow/defaults-flake";
+    defaults.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Setup secret management used by other flakes
+    secrets.url = "git+https://git.irlqt.net/crow/secrets-flake";
+
+    # Crow user login and setup
+    identities.url = "git+https://git.irlqt.net/crow/identities-flake";
+    identities.inputs.secrets.follows = "secrets";
+
+    # Connect to the amy-net and irlqt-net, network security and services
+    networking.url = "git+https://git.irlqt.net/crow/networking-flake";
+    networking.inputs.secrets.follows = "secrets";
+
     # Ephemeral File System
     impermanence.url = "github:nix-community/impermanence";
 
-    # My Flakes
-    # Useful command line toold
+    # Useful command line tools
     cli.url = "git+https://git.irlqt.net/crow/cli-flake";
-    # Websites I'm hosting
-    websites.url = "git+https://git.irlqt.net/crow/website-flake";
-    identities.url = "git+https://git.irlqt.net/crow/identities-flake";
-    networking.url = "git+https://git.irlqt.net/crow/networking-flake";
+    cli.inputs.nixpkgs.follows = "nixpkgs";
 
-    secrets.url = "git+https://git.irlqt.net/crow/secrets-flake";
+    # Sets up a reverse proxy and websites that are hosted here
+    websites.url = "git+https://git.irlqt.net/crow/website-flake";
   };
 
   outputs =
-    { nixpkgs
-    , secrets
-    , identities
-    , networking
+    { cli
+    , defaults
     , home-manager
+    , identities
     , impermanence
-    , cli
+    , networking
+    , nixpkgs
+    , secrets
     , websites
     , ...
     } @ inputs:
@@ -39,10 +52,6 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        config.permittedInsecurePackages = [
-          "dotnet-sdk-6.0.428"
-          "olm-3.2.16"
-        ];
       };
     in
     {
@@ -50,16 +59,13 @@
         inherit pkgs;
         specialArgs = { inherit inputs machine; };
         modules = [
-          networking.nixosModules.archive
-          identities.nixosModules.users.crow
+          defaults.nixosModules.default
           secrets.nixosModules.default
-          # Used to persist data across reboots
+          identities.nixosModules.users.crow
+          networking.nixosModules.archive
           impermanence.nixosModules.impermanence
-          # Websites Hosted by this server
           websites.nixosModules.${system}.default
-          # Commandline Utilities
           cli.nixosModules.${system}.default
-          # Main configuration file
           ./nixos
           # Home Manager as a NixOS Modules (contains sub-modules)
           home-manager.nixosModules.home-manager
@@ -71,9 +77,7 @@
               backupFileExtension = ".hmbkup";
               users.crow = { ... }: {
                 imports = [
-                  # Shell Customization & Useful Command Programs
                   cli.homeManagerModules.${system}.default
-                  # Main Home Manager Module - pulls in sub-modules from ./home
                   ./home
                 ];
               };

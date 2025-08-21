@@ -1,25 +1,38 @@
 # Ensure that you've opened port 32400 on the router
 # or you won't be able to reach it externally
-{ pkgs, domain, dataPath, ... }:
+{ pkgs, domain, dataPath, allow-list, interfaces, ... }:
 let
   name = "plex";
-  port = 32400;
   user = name;
+
+  port = 32400;
   address = "127.0.0.1";
   subDomain = name;
 in
 {
+  # Not a real user
+  users.users."${name}".isSystemUser = true;
+
+  # Prioritize Plex I/O
+  systemd.services.plex.serviceConfig.IOSchedulingPriority = 0;
 
   services = {
     # Enable Plex
     plex = {
       enable = true;
+      # Create a separate user for Plex for security reasons
       user = user;
       # This group has access to '/zpools/hdd/media' 
       group = "media-players";
 
+      # Store application data on the SSD
       dataDir = "${dataPath}/${name}";
       openFirewall = true;
+
+      # Allow use of all hardware
+      accelerationDevices = [ "*" ];
+
+      # Temporary workaround until the mirror works again after Plex gets its security patched
       package = pkgs.plex.override {
         plexRaw = pkgs.plexRaw.overrideAttrs (old: rec {
           pname = "plexmediaserver";
@@ -35,17 +48,26 @@ in
       };
     };
 
+    # Setup the reverse proxy to pass requests through to
     nginx = {
-      # Setup the reverse proxy
-      # Plex uses 'xvrqt.com' because it's an external facing service
-      virtualHosts."plex.xvrqt.com" = {
+      virtualHosts."${subDomain}.${domain}" = {
+        # Only listen on private interfaces
+        listenAddresses = interfaces;
+
         http2 = true;
         forceSSL = true;
         acmeRoot = null;
         enableACME = true;
+
         locations."/" = {
           proxyPass = "http://${address}:${(builtins.toString port)}";
           proxyWebsockets = true;
+          recommendedProxySettings = true;
+          extraConfig = ''
+            proxy_ssl_server_name on;
+            ${allow-list}
+            deny all;
+          '';
         };
       };
     };

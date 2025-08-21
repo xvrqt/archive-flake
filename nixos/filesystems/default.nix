@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, ... }: {
   ##############
   ## OVERVIEW ##
   ##############
@@ -20,6 +20,14 @@
     # Impermanence Subvolume & Settings
     ./persist.nix
   ];
+
+  # For formatting FAT file systems
+  environment = {
+    systemPackages = [
+      pkgs.exfat
+      pkgs.exfatprogs
+    ];
+  };
 
   ##############
   ## SWAPFILE ##
@@ -53,7 +61,6 @@
     options = [ "defaults" "mode=755" ];
     neededForBoot = true;
   };
-
 
   # Use the key on the USB stick to unlock the rest of the system partitions
   boot.initrd.luks.devices = {

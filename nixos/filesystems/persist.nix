@@ -2,12 +2,6 @@
 # https://github.com/nix-community/impermanence
 # To create a backing store, i.e. the 'persist' subvolume and to setup the
 # files and directories which are persisted through reboots to it.
-{ pkgs
-, ...
-}:
-let
-  # TBD
-in
 {
   ###################
   ## BACKING STORE ##
@@ -43,7 +37,6 @@ in
     files = [
       "/etc/machine-id"
       "/etc/nix/id_rsa"
-      #"/etc/exports.d/zfs.exports"
     ];
   };
 }

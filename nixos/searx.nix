@@ -1,26 +1,29 @@
 # Ensure that you've opened port 32400 on the router
 # or you won't be able to reach it externally
-{ lib, ... }:
+{ lib, inputs, machine, ... }:
 let
   name = "searx";
+
+  addresses = inputs.networking.config.machines.${machine}.ip.v4;
+  amy-net-interface = addresses.wg;
+  irlqt-net-interface = addresses.tailnet;
+
   port = 3452;
-  user = "crow";
   address = "127.0.0.1";
   domain = "irlqt.net";
   subDomain = "search";
 in
 {
-
-  users.groups.searx.members = [ "nginx" ];
   services = {
     "${name}" = {
       enable = true;
       redisCreateLocally = true;
+
       settings = {
         # Instance settings
         general = {
           debug = false;
-          instance_name = "xvrqt search";
+          instance_name = "irlqt search";
           donation_url = false;
           contact_url = false;
           privacypolicy_url = false;
@@ -65,6 +68,10 @@ in
 
         # Search engines
         engines = lib.mapAttrsToList (name: value: { inherit name; } // value) {
+          "github".disabled = false;
+          "crates.io".disabled = false;
+          "stackoverflow".disabled = false;
+          "superuser".disabled = false;
           "brave".disabled = true;
           "qwant".disabled = true;
           "curlie".disabled = true;
@@ -109,6 +116,10 @@ in
           "wikivoyage".disabled = false;
           "wikivoyage".weight = 0.5;
           "bing images".disabled = false;
+          "reddit".disabled = false;
+          "reddit".weight = 1.5;
+          "lemmyposts".disabled = false;
+          "lemmyposts".weight = 1.6;
           "google images".disabled = false;
           "artic".disabled = false;
           "deviantart".disabled = false;
@@ -154,7 +165,9 @@ in
     nginx = {
       # Setup the reverse proxy
       virtualHosts."${subDomain}.${domain}" = {
-        # listenAddresses = [ "10.128.0.1" ];
+        # Only listen on secured interfaces
+        listenAddresses = [ amy-net-interface irlqt-net-interface ];
+
         http2 = true;
         forceSSL = true;
         acmeRoot = null;
@@ -163,13 +176,11 @@ in
         locations."/" = {
           proxyPass = "http://${address}:${(builtins.toString port)}";
           proxyWebsockets = true;
-          # Only allow people connected via Wireguard to connect
-          # extraConfig = ''
-          #   allow 10.128.0.0/9;
-          #   deny all;
-          # '';
+          recommendedProxySettings = true;
         };
       };
     };
   };
+  # Added so nginx can properly proxy us
+  users.groups.searx.members = [ "nginx" ];
 }

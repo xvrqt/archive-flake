@@ -1,4 +1,4 @@
-{ domain, dataPath, ... }:
+{ domain, dataPath, allow-list, interfaces, ... }:
 let
   name = "qbittorrent";
   webPort = 8080;
@@ -8,16 +8,17 @@ let
   subDomain = "torrents";
 in
 {
-  imports = [
-    # Creates a services options 'qbittorrent' so that we can
-    # configure it like all the rest of the services
-    # ./option.nix
-  ];
-  # Open the torrent port in the firewall
-  networking.firewall = {
-    allowedTCPPorts = [ torrentPort ];
-    allowedUDPPorts = [ torrentPort ];
+
+  users = {
+    # Not a real user
+    users."${name}" = {
+      group = "pirates";
+      isSystemUser = true;
+    };
+    # Allow access to the /zpools/hdd/media
+    groups."media-players".members = [ "${name}" ];
   };
+
   # Uses the newly created service entry in 'options.nix'
   services = {
     "${name}" = {
@@ -34,7 +35,9 @@ in
     nginx = {
       # Setup the reverse proxy
       virtualHosts."${subDomain}.${domain}" = {
-        # listenAddresses = [ "10.128.0.1" ];
+        # Only listen on private interfaces
+        listenAddresses = interfaces;
+
         http2 = true;
         forceSSL = true;
         acmeRoot = null;
@@ -42,13 +45,23 @@ in
         locations."/" = {
           proxyPass = "http://${address}:${(builtins.toString webPort)}";
           proxyWebsockets = true;
+          recommendedProxySettings = true;
+
           # Only allow people connected via Wireguard to connect
-          # extraConfig = ''
-          #   allow 10.128.0.0/16;
-          #   deny all;
-          # '';
+          extraConfig = ''
+            proxy_pass_header Authorization;
+            proxy_ssl_server_name on;
+            ${allow-list}
+            deny all;
+          '';
         };
       };
     };
+  };
+
+  # Open the torrent port in the firewall
+  networking.firewall = {
+    allowedTCPPorts = [ torrentPort ];
+    allowedUDPPorts = [ torrentPort ];
   };
 }

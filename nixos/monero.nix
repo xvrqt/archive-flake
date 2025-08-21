@@ -34,7 +34,7 @@ in
       };
 
       limits = {
-        threads = 8;
+        # threads = 8;
         upload = 1024; # 1 MiB total
       };
 

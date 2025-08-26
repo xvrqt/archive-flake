@@ -1,7 +1,7 @@
 { domain, dataPath, allow-list, interfaces, ... }:
 let
   name = "qbittorrent";
-  webPort = 8080;
+  webPort = 8282;
   torrentPort = 37490;
   user = "crow";
   address = "127.0.0.1";
@@ -27,11 +27,13 @@ in
       # This group has access to '/zpools/hdd/media' and '/zpools/hdd/downloads'
       group = "pirates";
 
+      profileDir = "${dataPath}/${name}";
+
       webuiPort = webPort;
       torrentingPort = torrentPort;
-      profileDir = "${dataPath}/${name}";
       openFirewall = true;
     };
+
     nginx = {
       # Setup the reverse proxy
       virtualHosts."${subDomain}.${domain}" = {
@@ -57,11 +59,5 @@ in
         };
       };
     };
-  };
-
-  # Open the torrent port in the firewall
-  networking.firewall = {
-    allowedTCPPorts = [ torrentPort ];
-    allowedUDPPorts = [ torrentPort ];
   };
 }

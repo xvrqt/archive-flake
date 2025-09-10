@@ -21,10 +21,16 @@
 
     # Connect to the amy-net and irlqt-net, network security and services
     networking.url = "git+https://git.irlqt.net/crow/networking-flake";
+    # networking.url = "/home/crow/dev/networking-flake";
     networking.inputs.secrets.follows = "secrets";
 
     # Ephemeral File System
     impermanence.url = "github:nix-community/impermanence";
+
+    # CopyParty Module
+    copyparty.url = "/home/crow/dev/copyparty";
+    # copyparty.url = "github:xvrqt/copyparty";
+    # copyparty.url = "github:9001/copyparty";
 
     # Useful command line tools
     cli.url = "git+https://git.irlqt.net/crow/cli-flake";
@@ -36,6 +42,7 @@
 
   outputs =
     { cli
+    , copyparty
     , defaults
     , home-manager
     , identities
@@ -51,6 +58,7 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
+        overlays = [ copyparty.overlays.default ];
         config.allowUnfree = true;
       };
     in
@@ -59,6 +67,7 @@
         inherit pkgs;
         specialArgs = { inherit inputs machine; };
         modules = [
+          copyparty.nixosModules.default
           defaults.nixosModules.default
           secrets.nixosModules.default
           identities.nixosModules.users.crow

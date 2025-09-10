@@ -6,13 +6,14 @@
 }:
 let
 in {
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
   services = {
     # Rely on the xvrqt/websites-flake
     # Hosted in the Nix-Store 
     websites = {
       enable = true;
       dnsProvider = "cloudflare";
-      # dnsTokenFile = config.sops.secrets."cloudflare/CF_DNS_API_TOKEN".path;
+
       sites = {
         http-status-codes = {
           enable = true;
@@ -36,6 +37,7 @@ in {
         };
       };
     };
+
 
     # Additional Websites that *should* be inside the website flake but are not
     # Likely because they are under active development

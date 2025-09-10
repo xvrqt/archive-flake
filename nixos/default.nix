@@ -10,6 +10,8 @@
     ./bookstack
     # Gummi-boot setup, kernel modules, etc
     ./boot.nix
+    # CopyParty
+    ./copyparty
     # Setup and import zpools, boot device, unlock system device, persist data
     ./filesystems
     # Git Repositories
@@ -55,6 +57,10 @@
       package = pkgs.gitFull;
     };
   };
+
+  environment.systemPackages = [
+    pkgs.neofetch
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

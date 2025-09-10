@@ -17,7 +17,7 @@ in
   ];
 
   networking.firewall = {
-    allowedTCPPorts = [ monero-port monero-rpc-port 443 80 ];
+    allowedTCPPorts = [ monero-port monero-rpc-port ];
   };
 
 
@@ -38,12 +38,12 @@ in
       };
 
       limits = {
-        # threads = 1;
-        upload = 1024; # 1 MiB total
+        threads = 1;
+        upload = 1024; # in KiB (i.e. 1 MiB total)
       };
 
       mining = {
-        enable = false;
+        enable = true;
         threads = 1;
         address = "89BkGnoQ1T8KpzuBS2gpkoGcke9r8smfaMZzAexr1QdXT4tSecEJogXDt428qo5msCKPfHdyZASiF3QnoZmvBDXvAJPUq7o";
       };

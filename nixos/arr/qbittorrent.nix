@@ -3,7 +3,7 @@ let
   name = "qbittorrent";
   webPort = 8282;
   torrentPort = 37490;
-  user = "crow";
+  user = "${name}";
   address = "127.0.0.1";
   subDomain = "torrents";
 in

@@ -1,0 +1,226 @@
+# Root directory of your music
+# directory: /zpools/hdd/media/music
+# Location where your beets database is saved
+library: /zpools/ssd/apps/beets/musiclibrary.blb
+
+# Install these requirements if you want to use all the plugins. If you only want to use some, the required dependencies stand behind the plugins as well.
+# pip install beets[fetchart,lyrics,lastgenre] requests requests_oauthlib discogs-client pylast
+plugins:
+  # Add Discogs as a metadata source
+  # - discogs # pip install discogs-client
+
+  # Add BeatPort as a metadata source
+  #  - beatport # pip install requests requests_oauthlib
+
+  # Downloads Covers
+  - fetchart # pip install requests
+
+  # Downloads lyrics
+  - lyrics # pip install requests
+
+  # Downloads genres from last.fm
+  - lastgenre # pip install pylast
+
+  # Edit metadata of songs or albums with a text editor like vim or micro
+  - edit
+
+  # Use small python scripts to add logic the automated file sorting
+  - inline
+
+  # Adds the cover art to the metadata of the audio files
+  - embedart
+
+  # Can copy additional files like nfos, pdf booklets and cue-sheets
+  # - extrafiles
+
+  # Notify plex about new media
+  - plexupdate
+
+  # ???
+  - duplicates
+
+  # Set file and folder permissions
+  - permissions
+
+  # ???
+#  - export
+# ???
+#  - fuzzy
+# ???
+#  - info
+# ???
+#  - missing
+# ???
+#  - copyartifacts
+
+# Set the file permissions
+permissions:
+  file: 774
+  dir: 774
+
+# If öäüß and other non standard signs won't be printed correctly try some different values here
+# https://docs.python.org/2/library/codecs.html#standard-encodings
+terminal_encoding: utf-8
+
+# Use multiple cores?
+threaded: yes
+
+# Make youroutput pretty! Activate color and optionaly tweak the values
+# black, darkred, darkgreen, brown (darkyellow), darkblue, purple (darkmagenta), teal (darkcyan), lightgray, darkgray, red, green, yellow, blue, fuchsia (magenta), turquoise (cyan), white
+ui:
+  color: yes
+#  colors:
+#    text_success: green
+#    text_warning: yellow
+#    text_error: red
+#    text_highlight: red
+#    text_highlight_minor: lightgray
+#    action_default: turquoise
+#    action: blue
+
+# Configure the importing process
+# ???
+import:
+  write: yes
+  copy: no
+  move: no
+  autotag: yes
+  bell: yes
+  # log: /config/beet.log
+
+# Use the original release date of an album when a re-release is added
+original_date: yes
+# Start counting track numbers back at one for each disc
+per_disc_numbering: yes
+
+# Activates the embed art plugin and adds the cover to the audio files metadata
+embedart:
+  auto: yes
+
+# Custom user defined variables which can be used at the 'paths' section. 'inline' plugin required
+# Each line is a small python script which should return a string or an int
+item_fields:
+  # 'Nine Inch Nails - ' or '' depending if the artist differs from the album artist
+  mySongartist: artist + ' - ' if artist != albumartist and artist != '' else ''
+
+  # Release with multiple discs? For boolean operations
+  isMultidisc: 1 if disctotal > 1 else 0
+
+  # Changes the case of the album type
+  myAlbumType: ('' if albumtype == '' else ' [' + ('EP' if albumtype == 'ep' else albumtype.capitalize()) + ']')
+
+  # '1 - ' or '' depending if there are multiple discs or not
+  myDisc: ('' if disctotal <= 1 else str(disc) + ' - ')
+
+# Same as above but on album basis
+#album_fields:
+#  bitrate: |
+#          total = 0
+#          for item in items:
+#              total += item.bitrate
+#          return total / len(items)
+
+paths:
+  # For the normal albums and eps. Used when none of the other paths should be used
+  # Interpreten/boysetsfire/(2000) After the Eulogy [Album]/02 - Rookie.flac
+  # Interpreten/Oliver Koletzki/(2019) We Are All Lost/1 - 02 - Oliver Koletzki; Monolink - We Are All Lost.flac
+  default: Interpreten/$albumartist/($year) $album%aunique{}$myAlbumType/%if{$isMultidisc,$disc - }$track - $mySongartist$title
+
+  # For sampler and compilations. Used when 'comp:true' is set
+  # Compilations/Giegling/(2017) Planet Giegling/03 - Kettenkarussell - Walk With Me.flac
+  comp: Compilations/$albumartist/($year) $album%aunique{}/$myDisc$track - $artist - $title
+
+  # For single songs. Used when 'singleton:true' is set
+  #  singleton:
+
+  # For Soundtracks. Used when 'albumtype:soundtrack'
+  # Soundtracks/Trent Reznor & Atticus Ross/Watchmen_ Volume 1 (Music From the HBO Series) (2019)/04 - Trent Reznor & Atticus Ross - Nun With a Motherf_&_ing Gun.flac
+  albumtype:soundtrack: Soundtracks/$albumartist/$album%aunique{} ($year)/$myDisc$track - $artist - $title
+
+aunique:
+  keys: albumartist album
+  disambiguators: albumtype year label catalognum albumdisambig releasegroupdisambig
+  bracket: "[]"
+
+fetchart:
+  #   #minwidth: 800
+  #   #maxwidth: 800
+  #   #enforce_ratio: yes
+  auto: yes
+  sources: filesystem coverart itunes amazon albumart fanarttv
+
+lastgenre:
+  auto: yes
+  source: album
+
+extrafiles:
+  patterns:
+    all: "*.*"
+    artworkdir:
+      - "[sS]cans/"
+      - "[aA]rtwork/"
+      - "[aA]rt/"
+      - "[cC]over/"
+  paths:
+    artworkdir: $albumpath/Artwork
+    ext:log: $albumpath/$disc_folder/Data/
+    ext:cue: $albumpath/$disc_folder/Data/
+    ext:jpg: $albumpath/$disc_folder/
+    # ext:jpg: $albumpath/
+
+# copyartifacts:
+#    extensions: .cue .log .jpg .jpeg .png .txt
+
+replace:
+  '[\\/]': _
+  '^\.': _
+  '[\x00-\x1f]': _
+  '[<>:"\?\*\|]': _
+  '\.$': _
+  '\s+$': ""
+
+plex:
+  host: 100.64.0.3
+  port: 32400
+  token: oyWnN1QoHkkEW2pzbv9b
+  library_name: "Music"
+
+# Configure the edit plugin. Defines which fields are available for editing.
+# To choose your favorite editor change the $EDITOR environment variable
+edit:
+  itemfields:
+    - album
+    - albumartist
+    - artist
+    - track
+    - title
+    - year
+  albumfields:
+    - albumartist
+    - album
+    - year
+    - albumtype
+
+#none, low, medium, strong
+match:
+  strong_rec_thresh: 0.05
+  max_rec:
+    source: strong
+    artist: strong
+    album: strong
+    media: strong
+    mediums: strong
+    year: strong
+    country: strong
+    label: strong
+    catalognum: strong
+    albumdisambig: strong
+    album_id: strong
+    tracks: strong
+    missing_tracks: medium
+    unmatched_tracks: medium
+    track_title: strong
+    track_artist: strong
+    track_index: strong
+    track_length: strong
+    track_id: strong

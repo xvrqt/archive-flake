@@ -39,6 +39,10 @@ in
     ## MEDIA STREAMING SERVICES ##
     # Plex
     (import ./plex.nix { inherit pkgs domain dataPath; allow-list = allow-secure-interfaces-only; interfaces = private-interfaces; })
+    # Public media picker
+    (import ./jellyfin.nix { inherit domain dataPath; allow-list = allow-secure-interfaces-only; interfaces = private-interfaces; })
+    # Music Server
+    (import ./navidrome.nix { inherit domain dataPath; allow-list = allow-secure-interfaces-only; interfaces = private-interfaces; })
     ## MEDIA 
     # Public media picker
     (import ./jellyseerr.nix { inherit domain dataPath; allow-list = allow-secure-interfaces-only; interfaces = private-interfaces; })
@@ -46,6 +50,10 @@ in
     (import ./radarr.nix { inherit domain dataPath; allow-list = allow-amy-only; interfaces = private-interfaces; })
     # TV Series indexer, download, organizer
     (import ./sonarr.nix { inherit domain dataPath; allow-list = allow-amy-only; interfaces = private-interfaces; })
+    # Music indexer, downloader, organizer
+    (import ./lidarr.nix { inherit domain dataPath; allow-list = allow-amy-only; interfaces = private-interfaces; })
+    # Music P2P Daemon TODO: Add EnvFile
+    # (import ./slskd.nix { inherit domain dataPath; allow-list = allow-amy-only; interfaces = private-interfaces; })
     # Sync settings between Radarr & Sonarr
     (import ./prowlarr.nix { inherit lib config domain dataPath; allow-list = allow-amy-only; interfaces = private-interfaces; })
 
@@ -64,6 +72,8 @@ in
   environment.systemPackages = [
     # Some programs need this to use the P2000 Quadro card for transcoding
     pkgs.cudatoolkit
+    # Used for music tagging
+    pkgs.beets
   ];
 
   # Create a new group for daemon 'users' which can download, and organize media

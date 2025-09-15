@@ -125,7 +125,7 @@ in
 
           access = {
             A = [ "crow" ];
-            rwm = "*";
+            rmG = "*";
           };
           flags = {
             # "fk" enables filekeys (necessary for upget permission) (4 chars long)

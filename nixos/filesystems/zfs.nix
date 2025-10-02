@@ -67,7 +67,7 @@ in
         frequent = 4;
         daily = 7;
         weekly = 4;
-        monthly = 12;
+        monthly = 3;
       };
 
       # Do NOT send me an email

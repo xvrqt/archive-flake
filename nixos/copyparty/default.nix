@@ -188,7 +188,7 @@ in
         "/media/images" = {
           path = "${copyparty-path}/media/images";
 
-          access = readonly-access;
+          access = upload-access;
           flags = default-flags;
         };
         "/media/images/memes" = {

@@ -29,7 +29,8 @@ in
 
       settings = {
         "MainDir" = appDir;
-        "InterDir" = "${appDir}/dowloads";
+        "InterDir" = "/zpools/hdd/downloads/usenet";
+        # "InterDir" = "${appDir}/dowloads";
         "NzbDir" = "${appDir}/nzb";
         "QueueDir" = "${appDir}/queue";
         "TempDir" = "${appDir}/tmp";

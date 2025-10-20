@@ -9,7 +9,7 @@
     # This is overidden by zfs.nix to ensure compatibility
     # You _did_ check that the kernel you're using is compatible with ZFS, right?
     # That could be very bad if you didn't
-    kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_6_16;
 
     loader = {
       # Seconds until the first boot entry is selected

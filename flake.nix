@@ -34,7 +34,7 @@
 
     # Useful command line tools
     cli.url = "git+https://git.irlqt.net/crow/cli-flake";
-    cli.inputs.nixpkgs.follows = "nixpkgs";
+    # cli.inputs.nixpkgs.follows = "nixpkgs";
 
     # Sets up a reverse proxy and websites that are hosted here
     websites.url = "git+https://git.irlqt.net/crow/website-flake";

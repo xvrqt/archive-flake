@@ -10,8 +10,8 @@
       extraPackages = [
         pkgs.libvdpau-va-gl
         pkgs.intel-compute-runtime
-        pkgs.vaapiIntel
-        pkgs.vaapiVdpau
+        pkgs.intel-vaapi-driver
+        pkgs.libva-vdpau-driver
         pkgs.intel-media-driver
         pkgs.intel-vaapi-driver
       ];

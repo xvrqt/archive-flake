@@ -69,11 +69,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1759872306,
-        "narHash": "sha256-2yFprLokJaR1DlidP/WAjD5OWzCdgW6UQgnulvzWNJU=",
+        "lastModified": 1761775966,
+        "narHash": "sha256-aEGDnebmR2QqXtc0BOF09akOq2CN780WUFpWIaVexQQ=",
         "ref": "refs/heads/master",
-        "rev": "9d399a4865fdd577a9f298359976132ba9459c5a",
-        "revCount": 106,
+        "rev": "89eafc71c148c524e9459132e85b5af12b56914a",
+        "revCount": 107,
         "type": "git",
         "url": "https://git.irlqt.net/crow/cli-flake"
       },
@@ -369,11 +369,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759853171,
-        "narHash": "sha256-uqbhyXtqMbYIiMqVqUhNdSuh9AEEkiasoK3mIPIVRhk=",
+        "lastModified": 1761770832,
+        "narHash": "sha256-IQIWG6kHxnUpx5KEb9r0BROL3/R6UQ/30aO2oHncBA8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1a09eb84fa9e33748432a5253102d01251f72d6d",
+        "rev": "124b99dbd1594dbebdd575ac7142752ee96a98a0",
         "type": "github"
       },
       "original": {
@@ -528,11 +528,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1753645305,
-        "narHash": "sha256-uYpMd246hOjzow3CqFBp6trwfICEaQCt08NrOfz9HzA=",
+        "lastModified": 1758391957,
+        "narHash": "sha256-692naAvVLWKgNazXX0ywSrdHX/bS64aZxCZ3jyY2SMU=",
         "ref": "refs/heads/master",
-        "rev": "f76e30f079c1f0652e7e3efb498e1b6298cf8027",
-        "revCount": 15,
+        "rev": "61a802c0c9aa5006240b5a8052d4cb8f74cc4dd5",
+        "revCount": 17,
         "type": "git",
         "url": "https://git.irlqt.net/crow/irlqt-net-website-flake"
       },
@@ -554,6 +554,21 @@
       "original": {
         "type": "git",
         "url": "https://git.irlqt.net/crow/moomin-orb-website-flake"
+      }
+    },
+    "moshimom": {
+      "locked": {
+        "lastModified": 1761776128,
+        "narHash": "sha256-tuxYlsnxkskNWueS4n7p/JIRG0D/rxLVFJStsLpFSB4=",
+        "ref": "refs/heads/master",
+        "rev": "24766ec181831dd2b721bc357a5de725b6779d5b",
+        "revCount": 3,
+        "type": "git",
+        "url": "https://git.irlqt.net/crow/moshi-mom-website-flake"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.irlqt.net/crow/moshi-mom-website-flake"
       }
     },
     "networking": {
@@ -709,11 +724,11 @@
     },
     "nixpkgs_12": {
       "locked": {
-        "lastModified": 1753429684,
-        "narHash": "sha256-9h7+4/53cSfQ/uA3pSvCaBepmZaz/dLlLVJnbQ+SJjk=",
+        "lastModified": 1761373498,
+        "narHash": "sha256-Q/uhWNvd7V7k1H1ZPMy/vkx3F8C13ZcdrKjO7Jv7v0c=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7fd36ee82c0275fb545775cc5e4d30542899511d",
+        "rev": "6a08e6bb4e46ff7fcbb53d409b253f6bad8a28ce",
         "type": "github"
       },
       "original": {
@@ -788,11 +803,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1759632233,
-        "narHash": "sha256-krgZxGAIIIKFJS+UB0l8do3sYUDWJc75M72tepmVMzE=",
+        "lastModified": 1761656231,
+        "narHash": "sha256-EiED5k6gXTWoAIS8yQqi5mAX6ojnzpHwAQTS3ykeYMg=",
         "owner": "NixOs",
         "repo": "nixpkgs",
-        "rev": "d7f52a7a640bc54c7bb414cca603835bf8dd4b10",
+        "rev": "e99366c665bdd53b7b500ccdc5226675cfc51f45",
         "type": "github"
       },
       "original": {
@@ -1230,16 +1245,17 @@
         "http": "http",
         "irlqt-net": "irlqt-net",
         "moomin-orb": "moomin-orb",
+        "moshimom": "moshimom",
         "nixpkgs": "nixpkgs_12",
         "secrets": "secrets_3",
         "utils": "utils_3"
       },
       "locked": {
-        "lastModified": 1755555541,
-        "narHash": "sha256-FjmviQDYHPU8/3CHk3cwecvM41+l0D3dCJ2/75r1e8Q=",
+        "lastModified": 1761776161,
+        "narHash": "sha256-htBXUgdHIfkEVD3C6Du6lInwlNTA16d9nK71xnyKJ2c=",
         "ref": "refs/heads/master",
-        "rev": "f40954e2ee7665f31bbc33fcc10afeee29a67fd3",
-        "revCount": 74,
+        "rev": "20957f9606b2d289e64d422d3fbc445ce377b693",
+        "revCount": 78,
         "type": "git",
         "url": "https://git.irlqt.net/crow/website-flake"
       },

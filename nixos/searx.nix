@@ -108,7 +108,7 @@ in
           "ddg definitions".disabled = false;
           "ddg definitions".weight = 2;
           "wikibooks".disabled = false;
-          "wikidata".disabled = false;
+          "wikidata".disabled = true;
           "wikispecies".disabled = false;
           "wikispecies".weight = 0.5;
           "wikiversity".disabled = false;

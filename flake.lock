@@ -69,11 +69,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1761775966,
-        "narHash": "sha256-aEGDnebmR2QqXtc0BOF09akOq2CN780WUFpWIaVexQQ=",
+        "lastModified": 1762381797,
+        "narHash": "sha256-CoCHRQ+hYy+lmhRovRYLV/nfCMcn6j2s/6vvx6ua/z4=",
         "ref": "refs/heads/master",
-        "rev": "89eafc71c148c524e9459132e85b5af12b56914a",
-        "revCount": 107,
+        "rev": "0fd0f6592bcef28b9482895d20150c5580409907",
+        "revCount": 113,
         "type": "git",
         "url": "https://git.irlqt.net/crow/cli-flake"
       },
@@ -369,11 +369,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1761770832,
-        "narHash": "sha256-IQIWG6kHxnUpx5KEb9r0BROL3/R6UQ/30aO2oHncBA8=",
+        "lastModified": 1762463325,
+        "narHash": "sha256-33YUsWpPyeBZEWrKQ2a1gkRZ7i0XCC/2MYpU6BVeQSU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "124b99dbd1594dbebdd575ac7142752ee96a98a0",
+        "rev": "0562fef070a1027325dd4ea10813d64d2c967b39",
         "type": "github"
       },
       "original": {
@@ -558,11 +558,11 @@
     },
     "moshimom": {
       "locked": {
-        "lastModified": 1761776128,
-        "narHash": "sha256-tuxYlsnxkskNWueS4n7p/JIRG0D/rxLVFJStsLpFSB4=",
+        "lastModified": 1761783767,
+        "narHash": "sha256-uwJA3y80apSjXVu42E0zLFmeTzFy+uwYAW9Yi/1McoM=",
         "ref": "refs/heads/master",
-        "rev": "24766ec181831dd2b721bc357a5de725b6779d5b",
-        "revCount": 3,
+        "rev": "012b4a3f72816a01177d7c0af0d3fea18ab48a9a",
+        "revCount": 4,
         "type": "git",
         "url": "https://git.irlqt.net/crow/moshi-mom-website-flake"
       },
@@ -596,11 +596,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1757543080,
-        "narHash": "sha256-JaHzbY3oyvtXGuFYOmPBH5b/T7SkwwiGGgWWz3GoV2U=",
+        "lastModified": 1762484254,
+        "narHash": "sha256-DKYNLm0v8Tp4Dwu9SU/YyaEOkPQ4hAcfZBuphgBZDpk=",
         "ref": "refs/heads/master",
-        "rev": "79901038fe9867569857bf346d0d4da8af4c502b",
-        "revCount": 25,
+        "rev": "6b9d9cc3815d8b914c39cd184b43b9b882398b2d",
+        "revCount": 26,
         "type": "git",
         "url": "https://git.irlqt.net/crow/networking-flake"
       },
@@ -676,11 +676,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1754278406,
-        "narHash": "sha256-jvIQTMN5EzoOP5RaGztpVese8a3wqy0M/h6tNzycW28=",
+        "lastModified": 1762286042,
+        "narHash": "sha256-OD5HsZ+sN7VvNucbrjiCz7CHF5zf9gP51YVJvPwYIH8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "6a489c9482ca676ce23c0bcd7f2e1795383325fa",
+        "rev": "12c1f0253aa9a54fdf8ec8aecaafada64a111e24",
         "type": "github"
       },
       "original": {
@@ -803,11 +803,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1761656231,
-        "narHash": "sha256-EiED5k6gXTWoAIS8yQqi5mAX6ojnzpHwAQTS3ykeYMg=",
+        "lastModified": 1762361079,
+        "narHash": "sha256-lz718rr1BDpZBYk7+G8cE6wee3PiBUpn8aomG/vLLiY=",
         "owner": "NixOs",
         "repo": "nixpkgs",
-        "rev": "e99366c665bdd53b7b500ccdc5226675cfc51f45",
+        "rev": "ffcdcf99d65c61956d882df249a9be53e5902ea5",
         "type": "github"
       },
       "original": {
@@ -1251,11 +1251,11 @@
         "utils": "utils_3"
       },
       "locked": {
-        "lastModified": 1761776161,
-        "narHash": "sha256-htBXUgdHIfkEVD3C6Du6lInwlNTA16d9nK71xnyKJ2c=",
+        "lastModified": 1761783800,
+        "narHash": "sha256-lQycy4LOKXqDxYItjlUhaSDEn63Et+6pbcjGbdNzJc0=",
         "ref": "refs/heads/master",
-        "rev": "20957f9606b2d289e64d422d3fbc445ce377b693",
-        "revCount": 78,
+        "rev": "7fd7a0ab97159b168be06bb44f831564b6b78c0b",
+        "revCount": 79,
         "type": "git",
         "url": "https://git.irlqt.net/crow/website-flake"
       },

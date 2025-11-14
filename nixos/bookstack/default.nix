@@ -35,6 +35,18 @@ in
         DB_USERNAME = "bookstack";
         DB_DATABASE = "bookstack";
         DB_SOCKET = "/run/mysqld/mysqld.sock";
+
+        # Configure OIDC
+        AUTH_METHOD = "oidc";
+        AUTH_AUTO_INITIATE = "false";
+        OIDC_NAME = "irlqt";
+        OIDC_FETCH_AVATAR = "true";
+        OIDC_DISPLAY_NAME_CLAIMS = "preferred_username";
+
+        OIDC_CLIENT_ID = "YU9iIsWv3W5HFgrolcNAnHRN1vavwI1hd2rsOKSC";
+        OIDC_CLIENT_SECRET = "zRtcHSwgZ2ohRgW7cijuk1XCsGjY6NSltzJF4aju0vosUZg4moKVl1th4qujc06k0FczyLU3xVtGacdzSfHuXHAt2VPWK02u3m7UukXUzuc6fpxrCXPDBibnpELW7XwY";
+        OIDC_ISSUER = "https://auth.irlqt.net/application/o/bookstack/";
+        OIDC_ISSUER_DISCOVER = "true";
       };
 
 

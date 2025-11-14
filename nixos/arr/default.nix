@@ -18,7 +18,7 @@ let
     machines.nyaa.ip.v4.tailnet
     machines.spark.ip.v4.tailnet
     machines.archive.ip.v4.tailnet
-    machines.third-lobe.ip.v4.tailnet
+    machines.thirdlobe.ip.v4.tailnet
     machines.lighthouse.ip.v4.tailnet
     # The entire amy-net is a trusted interface
     "10.128.0.0/9"

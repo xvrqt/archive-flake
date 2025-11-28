@@ -28,9 +28,9 @@
     impermanence.url = "github:nix-community/impermanence";
 
     # CopyParty Module
-    copyparty.url = "/home/crow/dev/copyparty";
+    # copyparty.url = "/home/crow/dev/copyparty";
     # copyparty.url = "github:xvrqt/copyparty";
-    # copyparty.url = "github:9001/copyparty";
+    copyparty.url = "github:9001/copyparty";
 
     # Useful command line tools
     cli.url = "git+https://git.irlqt.net/crow/cli-flake";
@@ -74,7 +74,6 @@
           networking.nixosModules.archive
           impermanence.nixosModules.impermanence
           websites.nixosModules.${system}.default
-          cli.nixosModules.${system}.default
           ./nixos
           # Home Manager as a NixOS Modules (contains sub-modules)
           home-manager.nixosModules.home-manager
@@ -86,7 +85,7 @@
               backupFileExtension = ".hmbkup";
               users.crow = { ... }: {
                 imports = [
-                  cli.homeManagerModules.${system}.default
+                  cli.homeManagerModules.default
                   ./home
                 ];
               };

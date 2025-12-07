@@ -14,28 +14,28 @@ in {
       enable = true;
       dnsProvider = "cloudflare";
 
-      sites = {
-        #   http-status-codes = {
-        #     enable = true;
-        #     domain = "http.xvrqt.com";
-        #   };
-        # homepage = {
-        #   enable = true;
-        #   domain = "xvrqt.com";
-        # };
-        #   dino-game = {
-        #     enable = true;
-        #     domain = "dino.xvrqt.com";
-        #   };
-        #   moomin-orb = {
-        #     enable = true;
-        #     domain = "orb.xvrqt.com";
-        #   };
-        #   game-of-life = {
-        #     enable = true;
-        #     domain = "gol.xvrqt.com";
-        #   };
-      };
+      # sites = {
+      #   http-status-codes = {
+      #     enable = true;
+      #     domain = "http.xvrqt.com";
+      #   };
+      # homepage = {
+      #   enable = true;
+      #   domain = "xvrqt.com";
+      # };
+      #   dino-game = {
+      #     enable = true;
+      #     domain = "dino.xvrqt.com";
+      #   };
+      #   moomin-orb = {
+      #     enable = true;
+      #     domain = "orb.xvrqt.com";
+      #   };
+      #   game-of-life = {
+      #     enable = true;
+      #     domain = "gol.xvrqt.com";
+      #   };
+      # };
     };
 
 

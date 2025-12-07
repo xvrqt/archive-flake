@@ -362,21 +362,6 @@
         "type": "github"
       }
     },
-    "homepage": {
-      "locked": {
-        "lastModified": 1741296285,
-        "narHash": "sha256-50nO8XTAPRJcl7LuPiHyQmokEIJZnQ8kUigUF46IQ8Y=",
-        "ref": "refs/heads/master",
-        "rev": "f7779c4b097f44c04da3434b3e538aa2ca9d7f51",
-        "revCount": 3,
-        "type": "git",
-        "url": "https://git.irlqt.net/crow/homepage-website-flake"
-      },
-      "original": {
-        "type": "git",
-        "url": "https://git.irlqt.net/crow/homepage-website-flake"
-      }
-    },
     "identities": {
       "inputs": {
         "networking": "networking",
@@ -440,11 +425,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763258987,
-        "narHash": "sha256-kHTqhKDVklNkioeExrTRvn9qv0RvXNu7SKMpJnE2Z8s=",
+        "lastModified": 1765054734,
+        "narHash": "sha256-JxEBDsP+9v4LWCEgeBGy6QNxLUXp40ig86ibTe5o97k=",
         "ref": "refs/heads/master",
-        "rev": "73b7a567f0efe9b512d0cafca3579ea9b473c876",
-        "revCount": 56,
+        "rev": "ba365726a57c13e108a31b2758fe4f60ef448294",
+        "revCount": 57,
         "type": "git",
         "url": "https://git.irlqt.net/crow/networking-flake"
       },
@@ -651,7 +636,6 @@
         "copyparty": "copyparty",
         "defaults": "defaults",
         "home-manager": "home-manager",
-        "homepage": "homepage",
         "identities": "identities",
         "impermanence": "impermanence",
         "networking": "networking_2",
